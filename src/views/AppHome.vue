@@ -1,9 +1,8 @@
 <script>
-    import AppHeader from './components/Header/AppHeader.vue';
-
     export default{
+        name: "AppHome",
         components:{
-            AppHeader
+            
         },
         data(){
 
@@ -19,8 +18,10 @@
 </script>
 
 <template>
-    <AppHeader/>
-    <router-view></router-view>
+    
+    <h1>Saluti dalla Home</h1>
+    <div>Pagina di Home</div>
+
 </template>
 
 <style scoped>

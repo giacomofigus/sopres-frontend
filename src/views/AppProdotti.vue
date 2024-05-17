@@ -1,9 +1,9 @@
 <script>
-    import AppHeader from './components/Header/AppHeader.vue';
 
     export default{
+        name: "AppProdotti",
         components:{
-            AppHeader
+            
         },
         data(){
 
@@ -14,13 +14,15 @@
         mounted(){
 
         }
-    };
+    }
 
 </script>
 
 <template>
-    <AppHeader/>
-    <router-view></router-view>
+    
+    <h1>Pagina Prodotti</h1>
+    
+
 </template>
 
 <style scoped>
