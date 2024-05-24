@@ -12,26 +12,29 @@ export default {
 </script>
 
 <template>
-    <header class="border border-sky-500 py-2">
-        <nav class="flex items-center justify-between">
+    <header class=" px-3 flex items-center justify-between">
+        <nav>
             <div class="container-logo">
-                <router-link to="/">
+                <router-link class="flex items-center" to="/">
                     <img id="logo" src="../../img/logo.png" alt="logo">
+                    <!-- <span class="">Sopres</span> -->
                 </router-link>
             </div>
-            <div class="hidden md:flex pe-5 menu-pc">
-                <ul class="flex gap-8 font-semibold">
+        </nav>
+        <nav>
+            <div class="hidden md:flex pe-10 menu-pc">
+                <ul class="flex gap-8 ">
                     <!-- Menu pc -->
-                    <li class="text-lg">
+                    <li class="">
                         <router-link to="/prodotti">Prodotti</router-link>
                     </li>
-                    <li class="text-lg">
+                    <li class="">
                         <router-link to="/chi-siamo">Chi Siamo</router-link>
                     </li>
-                    <li class="text-lg">
+                    <li class="">
                         <router-link to="/contatti">Contatti</router-link>
                     </li>
-                    <li class="text-lg">
+                    <li class="">
                         <router-link to="/dove-siamo">Dove trovarci</router-link>
                     </li>
                 </ul>
@@ -40,14 +43,29 @@ export default {
             <div id="menu-mob" class="flex md:hidden">
                 <img class="hamb" src="../../img/bars-solid.svg" alt="menu">
             </div>
+
         </nav>
+
     </header>
 </template>
 
 
-<style lang ="scss" scoped>
+<style lang="scss" scoped>
+    *{
+        background-color: white;
+    }
+
+    header{
+        height: 80px;
+    }
+
     #logo{
         width: 150px;
+    }
+
+    li{
+        font-size: 17px;
+        font-weight: 700;
     }
 
     .container-logo{
@@ -57,6 +75,10 @@ export default {
     .hamb{
         width: 30px;
         height: 30px;
+    }
+
+    li{
+        color: #FF5E37;
     }
 
     @media only screen and (max-width: 768px) {

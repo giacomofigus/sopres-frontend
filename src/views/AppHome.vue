@@ -1,8 +1,10 @@
 <script>
+    import AppMain from '../components/Main/AppMain.vue';
+
     export default{
         name: "AppHome",
         components:{
-            
+            AppMain
         },
         data(){
 
@@ -18,10 +20,7 @@
 </script>
 
 <template>
-    
-    <h1>Saluti dalla Home</h1>
-    <div>Pagina di Home</div>
-
+    <AppMain/>
 </template>
 
 <style scoped>
