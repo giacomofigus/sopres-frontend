@@ -16,7 +16,7 @@ export default {
         <nav>
             <div class="container-logo">
                 <router-link class="flex items-center" to="/">
-                    <img id="logo" src="../../img/logo.png" alt="logo">
+                    <img id="logo" src="../img/logo.png" alt="logo">
                     <!-- <span class="">Sopres</span> -->
                 </router-link>
             </div>
@@ -41,7 +41,7 @@ export default {
             </div>
             <!-- Barre menu telefono -->
             <div id="menu-mob" class="flex md:hidden">
-                <img class="hamb" src="../../img/bars-solid.svg" alt="menu">
+                <fa class="hamb" icon="bars" />
             </div>
 
         </nav>
@@ -75,11 +75,13 @@ export default {
     .hamb{
         width: 30px;
         height: 30px;
+        color: #FF5E37;
     }
 
     li{
         color: #FF5E37;
     }
+    
 
     @media only screen and (max-width: 768px) {
         #logo{
