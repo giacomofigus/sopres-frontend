@@ -2,13 +2,15 @@
     import Jumbo from './Jumbo.vue';
     import Attività from './Attività.vue';
     import AppTestimonials from './AppTestimonials.vue';
+    import AppCustomers from './AppCustomers.vue';
 
     export default{
         name: "AppMain",
         components:{
             Jumbo,
             Attività,
-            AppTestimonials
+            AppTestimonials,
+            AppCustomers
         },
         data(){
 
@@ -37,6 +39,8 @@
         <div class="container-2">
             <AppTestimonials/>
             <img src="../../img/Vector-up.png" alt="" class="w-full block">
+            <AppCustomers/>
+
         </div>
 
 
@@ -56,7 +60,7 @@
     }
 
     main .container-2{
-        background: linear-gradient(180deg, #003049, #0073AF);  
+        background: linear-gradient(180deg, #003049, #0073AF  );  
         img{
             display: block;
             margin-top: -10px ;

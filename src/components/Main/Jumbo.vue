@@ -18,7 +18,7 @@
 </script>
 
 <template>
-        <section class="jumbo border">
+        <section class="jumbo">
             <div class="hero-section w-full py-2 ">
                 <div class="hero-body">
                     <h1>AL SERVIZIO DELLA TUA IMPRESA</h1>
@@ -89,6 +89,7 @@
         p{
             width: 60%;
             padding-right: 20px;
+            padding-block: 20px;
         }
 
         p, span{
@@ -167,7 +168,7 @@
     }
 
     // 1000 PIXEL
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
         .hero-body h1 {
             font-size: 60px;
         }

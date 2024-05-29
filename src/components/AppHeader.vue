@@ -64,7 +64,7 @@ export default {
     }
 
     li{
-        font-size: 17px;
+        font-size: 18px;
         font-weight: 700;
     }
 
@@ -75,11 +75,11 @@ export default {
     .hamb{
         width: 30px;
         height: 30px;
-        color: #FF5E37;
+        color: #E07132;
     }
 
     li{
-        color: #FF5E37;
+        color: #E07132;
     }
     
 
