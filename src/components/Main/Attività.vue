@@ -18,7 +18,7 @@
 </script>
 
 <template>
-    <section class="attività">
+    <section class="attività ">
         <div class="">
             <div class="title-container relative">
                 <img class="img-1 rounded-full absolute "src="https://picsum.photos/100/100" alt="">
@@ -49,7 +49,7 @@
 <style lang="scss" scoped>
 
     .attività{
-        margin-block: 100px;
+        padding-block: 100px;
         
         // border: 1px solid red;
 

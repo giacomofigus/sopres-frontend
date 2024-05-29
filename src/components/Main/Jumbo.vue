@@ -18,7 +18,7 @@
 </script>
 
 <template>
-        <section class="jumbo">
+        <section class="jumbo border">
             <div class="hero-section w-full py-2 ">
                 <div class="hero-body">
                     <h1>AL SERVIZIO DELLA TUA IMPRESA</h1>

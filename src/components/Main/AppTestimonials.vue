@@ -58,11 +58,6 @@
 
 <template>
     <div class="">
-        <div class="container-img">
-            <img src="../../img/Vector-up.png" alt="" class="w-full block">
-        </div>
-
-
         <div class="container-testimonial ">
             <div class="title-containers ">
                 <h2>I NOSTRI CLIENTI:</h2>
@@ -82,10 +77,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="container-img-2">
-            <img src="../../img/Vector-up.png" alt="" class="w-full block">
-        </div>
     </div>
     
 </template>
@@ -93,25 +84,6 @@
 <style lang="scss" scoped>
     
     div{
-
-        .container-img{
-            img{
-                display: block;
-                margin: 0;
-            }
-        }
-
-        .container-img-2{
-            img{
-                display: block;
-                margin-top: 0 ;
-
-                transform: scale(-1, -1);
-            }
-        }
-
-
-
         .container-testimonial{
             display: flex;
             justify-content: center;
