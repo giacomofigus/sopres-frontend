@@ -49,8 +49,9 @@
 <style lang="scss" scoped>
 
     .attività{
-        padding-block: 100px;
-        border: 1px solid red;
+        margin-block: 100px;
+        
+        // border: 1px solid red;
 
         div{
             display: flex;

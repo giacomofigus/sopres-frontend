@@ -1,12 +1,14 @@
 <script>
     import Jumbo from './Jumbo.vue';
     import Attività from './Attività.vue';
+    import AppTestimonials from './AppTestimonials.vue';
 
     export default{
         name: "AppMain",
         components:{
             Jumbo,
-            Attività
+            Attività,
+            AppTestimonials
         },
         data(){
 
@@ -26,6 +28,7 @@
     <main>
         <Jumbo/>
         <Attività/>
+        <AppTestimonials/>
     </main>
 
 </template>
