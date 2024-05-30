@@ -26,6 +26,10 @@
             <p>Questo è un paragrafo di esempio. Qui puoi inserire il testo che desideri visualizzare sotto il titolo.</p>
         </div>
     </div>
+
+    <div class="sponsor-band">
+        ciao
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -33,7 +37,7 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    padding-block: 100px;
+    padding-block: 150px;
     margin: 0 auto;
 
     .image-container {
@@ -78,6 +82,11 @@
     }
 }
 
+.sponsor-band{
+    margin-top: 50px;
+    border: 1px solid red;
+    padding-block: 20px;
+}
 
 @media screen and (max-width: 1024px){
     .container {
@@ -154,7 +163,8 @@
                 font-size: 50px;
                 text-align: center;
                 width: 100%;
-                margin-bottom: 20px
+                margin-bottom: 20px;
+                margin-top: 30px;
             }
 
             p {

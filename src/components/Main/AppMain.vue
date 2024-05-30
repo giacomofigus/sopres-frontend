@@ -3,6 +3,7 @@
     import Attività from './Attività.vue';
     import AppTestimonials from './AppTestimonials.vue';
     import AppCustomers from './AppCustomers.vue';
+    import AppFAQContacts from './AppFAQ-Contacts.vue';
 
     export default{
         name: "AppMain",
@@ -10,7 +11,8 @@
             Jumbo,
             Attività,
             AppTestimonials,
-            AppCustomers
+            AppCustomers,
+            AppFAQContacts
         },
         data(){
 
@@ -40,6 +42,7 @@
             <AppTestimonials/>
             <img src="../../img/Vector-up.png" alt="" class="w-full block">
             <AppCustomers/>
+            <AppFAQContacts/>
 
         </div>
 
@@ -60,7 +63,7 @@
     }
 
     main .container-2{
-        background: linear-gradient(180deg, #003049, #0073AF  );  
+        background: linear-gradient(180deg,#0073AF,  #003049 );  
         img{
             display: block;
             margin-top: -10px ;
