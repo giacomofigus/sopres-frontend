@@ -28,7 +28,7 @@
 </script>
 
 <template>
-    <section class="flex">
+    <section class="flex relative">
 
         <!-- FAQ -->
         <div class="faq w-1/2 py-16 ">
@@ -45,12 +45,12 @@
                         <p>{{ faq.answer }}</p>
                     </div> 
                 </div>
-
             </div>
+            
         </div>
 
         <!-- FORM CONTATTI -->
-        <div class="contacts w-1/2 pt-12 px-10 flex flex-col justify-center">
+        <div class="contacts w-1/2 pt-8 px-10 flex flex-col justify-center">
             <h3 class="mb-12">Contattaci per più informazioni</h3>
             <form action="" class="space-y-8 flex flex-col">
                 <div class="flex  name-section">
@@ -76,13 +76,22 @@
 
             </form>
         </div>
+
+        <!-- <img src="../../img/Vector-up.png" alt="" class="w-full border absolute"> -->
     </section>
+    
+   
+
+    
 </template>
 
 <style lang="scss" scoped>
     section{
         height: 100vh;
 
+        img{
+            bottom: -120px;
+        }
         // SEZIONE FAQ
         .faq{
             h3{
@@ -209,6 +218,7 @@
 
             .contacts{
                 width: 100%;
+                padding-bottom: 50px;
 
                 h3{
                     font-size: 55px;
@@ -240,6 +250,7 @@
 
             .contacts{
                 padding-inline: 20px;
+                
 
                 h3{
                     font-size: 50px;

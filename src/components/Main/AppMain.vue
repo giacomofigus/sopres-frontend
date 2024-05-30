@@ -40,12 +40,13 @@
             
         <div class="container-2">
             <AppTestimonials/>
-            <img src="../../img/Vector-up.png" alt="" class="w-full block">
+            <img src="../../img/Vector-up.png" alt="" class="w-full block down">
             <AppCustomers/>
             <AppFAQContacts/>
 
         </div>
 
+        
 
         
     </main>
@@ -64,7 +65,7 @@
 
     main .container-2{
         background: linear-gradient(180deg,#0073AF,  #003049 );  
-        img{
+        .down{
             display: block;
             margin-top: -10px ;
 
