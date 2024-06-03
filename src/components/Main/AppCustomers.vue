@@ -27,8 +27,9 @@
         </div>
     </div>
 
-    <div class="sponsor-band">
-        ciao
+    <div class="sponsor-band flex">
+        <img src="../../img/Zenith-logo.png" alt="">
+        <img src="../../img/Trony-Logo.png" alt="">
     </div>
 </template>
 
@@ -84,8 +85,14 @@
 
 .sponsor-band{
     margin-top: 50px;
-    border: 1px solid red;
-    padding-block: 20px;
+    padding-block: 10px;
+    background-color: rgba(0, 48, 73, 0.54);
+    gap: 50px;
+
+    img{
+        width: 80px;
+        
+    }
 }
 
 @media screen and (max-width: 1024px){

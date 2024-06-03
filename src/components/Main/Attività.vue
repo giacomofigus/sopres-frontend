@@ -5,13 +5,48 @@
             
         },
         data(){
-
+            return{
+                isTitleVisible: false,
+                isDescriptionVisible: false,
+                isButtonVisible: false,
+                isImgVisible: false,
+                isImgVisible2: false,
+                isImgVisible3: false
+            }
         },
         methods: {
-
+            handleIntersect(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.isTitleVisible = true;
+                    setTimeout(() => {
+                        this.isDescriptionVisible = true;
+                    }, 300);
+                    setTimeout(() => {
+                        this.isButtonVisible = true;
+                    }, 400);
+                    setTimeout(() => {
+                        this.isImgVisible = true;
+                    }, 300);
+                    setTimeout(() => {
+                        this.isImgVisible2 = true;
+                    }, 400);
+                    setTimeout(() => {
+                        this.isImgVisible3 = true;
+                    }, 500);
+                    observer.unobserve(entry.target); // Stop observing after first intersect
+                }
+            });
+        }
         },
         mounted(){
+            const options = {
+            root: null, // relative to the viewport
+            threshold: 0.1 // trigger when 10% of the element is visible
+        };
 
+        const observer = new IntersectionObserver(this.handleIntersect, options);
+        observer.observe(this.$el);
         }
     };
 
@@ -21,23 +56,23 @@
     <section class="attività ">
         <div class="">
             <div class="title-container relative">
-                <img class="img-1 rounded-full absolute "src="https://picsum.photos/100/100" alt="">
-                <h2>HAI UN'<br> ATTIVITÀ?</h2>
+                <img class="img-1 rounded-full absolute animate-img "src="https://picsum.photos/100/100" alt="" :class="{ visible: isImgVisible }">
+                <h2 class="animate-title" :class="{ visible: isTitleVisible }">HAI UN'<br> ATTIVITÀ?</h2>
             </div>
 
             <div class="paragraph-container ">
 
 
-                <p class="relative">
+                <p class="relative animate-description" :class="{visible: isDescriptionVisible}">
                     Il nostro staff specializzato offre <span>servizi</span> completi nel campo del telematico, dalla <span>vendita</span> all'<span>assistenza</span>, con soluzioni personalizzate e supporto continuo. Forniamo e manuteniamo anche <span>bilance di precisione</span>, <span>sistemi gestionali</span> e macchine per ufficio, garantendo strumenti affidabili e all'avanguardia per ottimizzare la tua <span>attività</span>.
 
                 </p>
 
-                <img class="img-2 rounded-full absolute "src="https://picsum.photos/100/100" alt="">
-                <img class="img-3 rounded-full absolute "src="https://picsum.photos/100/100" alt="">
+                <img class="img-2 rounded-full absolute animate-img "src="https://picsum.photos/100/100" alt="" :class="{ visible: isImgVisible2 }">
+                <img class="img-3 rounded-full absolute animate-img "src="https://picsum.photos/100/100" alt="" :class="{ visible: isImgVisible3 }">
             </div>
 
-            <div>
+            <div class="animate-button" :class="{ visible: isButtonVisible }" >
                 <a href="">
                     Scopri di piu
                 </a>
@@ -66,6 +101,19 @@
                 line-height: 1.1;
                 z-index: 2;
             }
+
+
+            // ANIMAZIONI
+            .animate-title, .animate-description, .animate-button,.animate-img {
+                opacity: 0;
+                transform: translateY(10%);
+                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            }
+            .visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            /////////
 
             .paragraph-container{
                 display: flex;

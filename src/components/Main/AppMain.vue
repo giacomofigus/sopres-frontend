@@ -4,6 +4,7 @@
     import AppTestimonials from './AppTestimonials.vue';
     import AppCustomers from './AppCustomers.vue';
     import AppFAQContacts from './AppFAQ-Contacts.vue';
+    
 
     export default{
         name: "AppMain",

@@ -5,13 +5,34 @@
             
         },
         data(){
-
+            return{
+                isTitleVisible: false,
+                isDescriptionVisible: false,
+                isButtonVisible: false
+            }
         },
         methods: {
 
         },
         mounted(){
+            setTimeout(() => {
+                this.isTitleVisible = true;
+            }, 500); 
 
+            setTimeout(() => {
+                this.isDescriptionVisible = true;
+            }, 600);
+
+            setTimeout(() => {
+                this.isButtonVisible = true;
+            }, 700);
+            
+            setTimeout(() => {
+                const photos = document.querySelectorAll('.photo');
+                photos.forEach(photo => {
+                    photo.classList.add('visible');
+                });
+            });
         }
     };
 
@@ -21,11 +42,17 @@
         <section class="jumbo">
             <div class="hero-section w-full py-2 ">
                 <div class="hero-body">
-                    <h1>AL SERVIZIO DELLA TUA IMPRESA</h1>
-                    <p>
-                        Servizi specializzati in <span>registratori di cassa</span>, <span>bilance</span> e <span>software gestionali</span>, con un focus particolare sull'assistenza. 
-                    </p>
-                    <div>
+                    <!-- <div class="animate-container"> -->
+                        <h1 class="animate-title" :class="{ visible: isTitleVisible }">AL SERVIZIO DELLA TUA IMPRESA</h1>
+                    <!-- </div> -->
+                    
+                    <!-- <div class="animate-container"> -->
+                        <p class="animate-description" :class="{ visible: isDescriptionVisible }">
+                            Servizi specializzati in <span>registratori di cassa</span>, <span>bilance</span> e <span>software gestionali</span>, con un focus particolare sull'assistenza. 
+                        </p>
+                    <!-- </div> -->
+                    
+                    <div class="animate-button" :class="{visible: isButtonVisible}">
                         <a href="">CONTATTACI</a>
                     </div>
                 </div>
@@ -129,7 +156,8 @@
             width: 100%;
             flex: 1;
             gap: 30px;
-
+            
+            
             .photo{
                 flex: 1;
                 object-fit: cover;
@@ -138,13 +166,40 @@
                 height: 180px;
                 width: 100%;
                 border-radius: 30px;
-                
+                opacity: 0; 
+                animation: slideFromRight 1s ease forwards;
             }
+
+            @keyframes slideFromRight {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            .photo.visible {
+                 opacity: 1;
+            }   
+
 
             .big-photo{
                 flex: 2;
             }
         }
+    }
+
+
+    // ANIMATIONS
+    .animate-title, .animate-description, .animate-button {
+        opacity: 0;
+        transform: translateY(10%);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 

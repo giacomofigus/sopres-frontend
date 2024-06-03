@@ -50,7 +50,7 @@
         </div>
 
         <!-- FORM CONTATTI -->
-        <div class="contacts w-1/2 pt-8 px-10 flex flex-col justify-center">
+        <div class="contacts w-1/2 px-10 flex flex-col justify-center">
             <h3 class="mb-12">Contattaci per più informazioni</h3>
             <form action="" class="space-y-8 flex flex-col">
                 <div class="flex  name-section">
@@ -75,9 +75,10 @@
                 <button type="submit" class="bg-blue-500 text-white p-2 mx-auto">Invia</button>
 
             </form>
+            <p class="mt-8"><span>*</span> sono i campi obbligatori</p>
         </div>
 
-        <!-- <img src="../../img/Vector-up.png" alt="" class="w-full border absolute"> -->
+        <!-- <img src="../../img/Vector-up.png" alt="" class="w-full absolute"> -->
     </section>
     
    
@@ -87,11 +88,8 @@
 
 <style lang="scss" scoped>
     section{
-        height: 100vh;
+        height: 120vh;
 
-        img{
-            bottom: -120px;
-        }
         // SEZIONE FAQ
         .faq{
             h3{
@@ -133,7 +131,7 @@
         // SEZIONE CONTATTI
         .contacts{
             background-color: rgba(217, 217, 217, 0.19);
-
+            
             h3{
                 font-size: 60px;
                 font-weight: 300;
@@ -161,6 +159,10 @@
                     padding-inline: 60px;
                     width: auto;
                 }
+            }
+
+            p span{
+                color: #FF5E37
             }
         }
     }
@@ -222,7 +224,7 @@
 
                 h3{
                     font-size: 55px;
-
+                    padding-top: 30px;
                 }
                 
             }
@@ -253,7 +255,8 @@
                 
 
                 h3{
-                    font-size: 50px;
+                    font-size: 45px;
+                    
                 }
 
                 form{
