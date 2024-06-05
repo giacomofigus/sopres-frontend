@@ -1,4 +1,7 @@
 <script>
+    import AOS from 'aos';
+    import 'aos/dist/aos.css';
+
     export default{
         name: "AppCustomers",
         components:{
@@ -11,29 +14,34 @@
 
         },
         mounted(){
-
+            AOS.init({
+                duration:1000,
+                once:true,
+            });
         }
     };
 </script>
 
 <template>
-    <div class="container  flex">
-        <div class="image-container">
+    <div class="container flex" >
+        <div class="image-container" data-aos="fade-right">
             <img src="../../img/cagliari-pin.png" alt="Descrizione dell'immagine">
         </div>
-        <div class="text-container">
-            <h1>Più di <span>1000</span> clienti in tutta la sardegna</h1>
-            <p>Questo è un paragrafo di esempio. Qui puoi inserire il testo che desideri visualizzare sotto il titolo.</p>
+        <div class="text-container" >
+            <h1 data-aos="fade-up" >Più di <span>1000</span> clienti in tutta la sardegna</h1>
+            <p data-aos="fade-up" data-aos-duration="1500">Questo è un paragrafo di esempio. Qui puoi inserire il testo che desideri visualizzare sotto il titolo.</p>
         </div>
     </div>
 
+    <!-- SPONSOR BAND -->
     <div class="sponsor-band flex">
-        <img src="../../img/Zenith-logo.png" alt="">
-        <img src="../../img/Trony-Logo.png" alt="">
+        <!-- <img src="../../img/Zenith-logo.png" alt="">
+        <img src="../../img/Trony-Logo.png" alt=""> -->
     </div>
 </template>
 
 <style lang="scss" scoped>
+
 .container {
     display: flex;
     align-items: center;

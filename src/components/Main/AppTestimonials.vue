@@ -1,10 +1,18 @@
 <script>
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import 'swiper/css';
+    import 'swiper/css/effect-cards';
+    import { EffectCards } from 'swiper/modules';
+    
     import CardTestimonial from './CardTestimonial.vue';
+
 
     export default{
         name: "AppTestimonials",
         components:{
-            CardTestimonial
+            CardTestimonial,
+            Swiper,
+            SwiperSlide
         },
         data(){
             return{
@@ -36,7 +44,8 @@
         
                 ],
                 transitioning: false,
-                animationClass: ''
+                animationClass: '',
+                isMobile: window.innerWidth <= 576
             }
         },
         methods: {
@@ -47,10 +56,16 @@
             nextTestimonial(){
                 const last = this.testimonials.pop();
                 this.testimonials.unshift(last);
+            },
+            handleResize(){
+                this.isMobile = window.innerWidth <= 576;
             }
         },
         mounted(){
-
+            window.addEventListener('resize', this.handleResize);
+        },
+        beforeDestroy() {
+            window.removeEventListener('resize', this.handleResize);
         }
     };
 
@@ -255,8 +270,9 @@
                 padding-block: 120px;
                 .title-containers{
                     h2{
-                        font-size: 45px;
-                        margin-bottom: 20px
+                        font-size: 42px;
+                        margin-bottom: 20px;
+                        text-align: center;
                     }
 
                     .testimonials{

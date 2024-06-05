@@ -19,12 +19,238 @@
 </script>
 
 <template>
-    
-    <h1>Pagina Dovesiamo</h1>
-    
+    <main >
+        <div class="big-container flex h-full">
+            <div class="map-container relative">
+                <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d3090.4210220108052!2d9.101212002145797!3d39.23331330597534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!1i0!3e0!4m0!4m5!1s0x12e7341ffa62a6fd%3A0x5a9c86f9083243ce!2sVia+delle+Doline%2C+8%2C+09122+Cagliari!3m2!1d39.2333965!2d9.102239299999999!5e0!3m2!1sit!2sit!4v1428597999253" frameborder="0" class="w-full h-full"></iframe>
+            </div>
 
+            
+            
+            <div class="info-container flex flex-col gap-14 justify-center items-center">
+                
+                <form action="" class="space-y-8 flex flex-col">
+                    <h2 class="">Contattaci</h2>
+                    <div class="flex name-section">
+                        <div class="flex flex-col w-1/2 name me-5">
+                            <label for="nome" class="mb-2">Nome <span>*</span></label>
+                            <input type="text" id="nome" name="nome" class="border border-gray-300 p-2 ">
+                        </div>
+                        <div class="flex flex-col w-1/2 surname">
+                            <label for="cognome" class="mb-2">Cognome <span>*</span></label>
+                            <input type="text" id="cognome" name="cognome" class="border border-gray-300 p-2 ">
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="email" class="mb-2">Email <span>*</span></label>
+                        <input type="email" id="email" name="email" class="border border-gray-300 p-2 ">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="messaggio" class="mb-2">Messaggio <span>*</span></label>
+                        <textarea id="messaggio" name="messaggio" class="border border-gray-300 p-2 h-32"></textarea>
+                    </div>
+
+                    <button type="submit" class="bg-blue-500 text-white p-2 mx-auto">Invia</button>
+
+                </form>
+            </div>
+            
+        </div>
+
+    </main>
 </template>
 
-<style scoped>
+<style lang="scss"scoped>
+    main{
+        height: calc(100vh - 80px);
+        background: linear-gradient(180deg, #0073AF, #003049 );
+        
+        .map-container{
+            width: 50%;
+            padding: 0px;
 
+            iframe{
+                border-radius: 0px;
+            }
+        }
+
+        .info-container{
+            width: 50%;
+            background-color: rgba(217, 217, 217, 0.19);
+
+
+
+                h2{
+                    color: white;
+                    font-family: 'Lato', sans-serif;
+                    font-size: 65px;
+                    font-weight: 300;
+                }
+
+                form{
+                    width: 80%;
+
+                    label{
+                        font-size: 20px;
+                        font-family: 'Lato', sans-serif;
+                        color: white;
+
+                        span{
+                            color: #E07132;
+                        }
+                    }
+
+                    input{
+                        height: 35px;
+                        // background-color: #E0E0E0;
+                        border-radius: 10px;
+                    }
+
+                    textarea{
+                        // 
+                        border-radius: 10px;
+                        height: 100px;
+                    }
+
+                    button{
+                        width: auto;
+                        background-color: #E07132;
+                        border-radius: 40px;
+                        padding-inline: 30px;
+                    }
+
+
+                
+                }
+        }
+    }
+
+
+    // LAPTOP
+    @media screen and (max-width: 1024px){
+        main{
+            .big-container{
+                
+
+                .map-container{
+                    padding: 0px;
+
+                    iframe{
+                        border-radius: 0px;
+                    }
+                }
+
+                .info-container{
+
+
+                    form{
+
+
+                        h2{
+                           
+                        }
+
+                        .name-section{
+  
+
+                            .name, .surname{
+                                
+                            }
+
+                            .name{
+                                #nome{
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // TABLET
+    @media screen and (max-width: 768px){
+        main{
+            .big-container{
+                flex-direction: column;
+
+                .map-container{
+                    width: 100%;
+                    
+                    padding: 0;
+
+                    iframe{
+                        border-radius: 0;
+                        // height: 250px;
+                    }
+                }
+
+                .info-container{
+                    width: 100%;
+                    padding-inline: 40px;
+
+                    form{
+                        width: 100%;
+                        padding-block: 10px;
+                        padding-bottom: 30px;
+
+                        h2{
+                           font-size: 55px;
+                        }
+
+                        .name-section{
+                            margin: 0;
+                            flex-direction: column;
+
+                            .name, .surname{
+                                width: 100%;
+                            }
+
+                            .name{
+                                #nome{
+                                    margin-bottom: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // TELEFONO
+    @media screen and (max-width: 576px){
+        main{
+            .big-container{
+                flex-direction: column;
+
+                .map-container{
+                    width: 100%;
+                    
+                    padding: 0;
+
+                    iframe{
+                        border-radius: 0;
+                        // height: 250px;
+                    }
+                }
+
+                .info-container{
+                    width: 100%;
+                    padding-inline: 20px;
+
+                    form{
+                        padding-block: 20px;
+                        padding-bottom: 30px;
+
+                        h2{
+                            font-size: 50px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>

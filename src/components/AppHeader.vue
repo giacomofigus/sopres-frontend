@@ -24,16 +24,16 @@ export default {
                 <ul class="flex gap-8 ">
                     <!-- Menu pc -->
                     <li class="">
+                        <router-link to="/">Home</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/chi-siamo">Chi siamo</router-link>
+                    </li>
+                    <li class="">
                         <router-link to="/prodotti">Prodotti</router-link>
                     </li>
-                    <li class="">
-                        <router-link to="/chi-siamo">Chi Siamo</router-link>
-                    </li>
-                    <li class="">
-                        <router-link to="/contatti">Contatti</router-link>
-                    </li>
-                    <li class="">
-                        <router-link to="/dove-siamo">Dove trovarci</router-link>
+                    <li class="rounded-full ">
+                        <router-link to="/dove-siamo" class="border py-2 px-3 rounded-full btn">Contattaci</router-link>
                     </li>
                 </ul>
             </div>
@@ -52,7 +52,9 @@ export default {
 
 
     header{
+        background-color: white;
         height: 80px;
+        z-index: 100;
     }
 
     #logo{
@@ -62,7 +64,14 @@ export default {
     li{
         font-size: 18px;
         font-weight: 700;
+
+        .btn{
+            background-color: #E07132;
+            color: white;
+            border: 0;
+        }
     }
+
 
     .container-logo{
         padding-inline: 8px;

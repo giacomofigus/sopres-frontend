@@ -31,11 +31,11 @@
     <section class="flex relative">
 
         <!-- FAQ -->
-        <div class="faq w-1/2 py-16 ">
+        <div class="faq w-1/2 py-16  mt-12" >
             <h3 class="ps-10">FAQs</h3>
             <p class="ps-10">Hai delle domande? Qua troverai quelle che ci vengono fatte più frequentemente</p>
 
-            <div class="accordion my-16 ps-10">
+            <div class="accordion my-16 ps-10" >
                 <div v-for="(faq, index) in faqs" :key="index" class="accordion-item">
                     <h5 class="px-5 border-t  flex items-center justify-between" @click="toggle(index)">
                         {{ faq.question }}
@@ -50,7 +50,7 @@
         </div>
 
         <!-- FORM CONTATTI -->
-        <div class="contacts w-1/2 px-10 flex flex-col justify-center">
+        <div class="contacts w-1/2 px-10 flex flex-col justify-center py-12">
             <h3 class="mb-12">Contattaci per più informazioni</h3>
             <form action="" class="space-y-8 flex flex-col">
                 <div class="flex  name-section">

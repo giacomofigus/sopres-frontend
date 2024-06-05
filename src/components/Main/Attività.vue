@@ -41,12 +41,12 @@
         },
         mounted(){
             const options = {
-            root: null, // relative to the viewport
-            threshold: 0.1 // trigger when 10% of the element is visible
-        };
+                root: null, // relative to the viewport
+                threshold: 0.1 // trigger when 10% of the element is visible
+            };
 
-        const observer = new IntersectionObserver(this.handleIntersect, options);
-        observer.observe(this.$el);
+            const observer = new IntersectionObserver(this.handleIntersect, options);
+            observer.observe(this.$el);
         }
     };
 
