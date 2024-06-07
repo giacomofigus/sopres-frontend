@@ -56,7 +56,7 @@
     <section class="attività ">
         <div class="">
             <div class="title-container relative">
-                <img class="img-1 rounded-full absolute animate-img "src="https://picsum.photos/100/100" alt="" :class="{ visible: isImgVisible }">
+                <img class="img-1 absolute animate-img" src="../../img/pharmacy.jpg" alt="" :class="{ visible: isImgVisible }">
                 <h2 class="animate-title" :class="{ visible: isTitleVisible }">HAI UN'<br> ATTIVITÀ?</h2>
             </div>
 
@@ -68,8 +68,8 @@
 
                 </p>
 
-                <img class="img-2 rounded-full absolute animate-img "src="https://picsum.photos/100/100" alt="" :class="{ visible: isImgVisible2 }">
-                <img class="img-3 rounded-full absolute animate-img "src="https://picsum.photos/100/100" alt="" :class="{ visible: isImgVisible3 }">
+                <img class="img-2 rounded-full absolute animate-img " src="../../img/restaurant.jpg" alt="" :class="{ visible: isImgVisible2 }">
+                <img class="img-3 rounded-full absolute animate-img " src="../../img/negozio-abbigliamento.jpg" alt="" :class="{ visible: isImgVisible3 }">
             </div>
 
             <div class="animate-button" :class="{ visible: isButtonVisible }" >
@@ -134,11 +134,19 @@
                 .img-2{
                     right: -30px;
                     top: 0;
+                    width: 110px;
+                    height: 110px;
+                    border-radius: 100%;
+                    object-fit: cover;
                 }
 
                 .img-3{
                     left: - 50px;
                     bottom: 0px;
+                    width: 110px;
+                    height: 110px;
+                    border-radius: 100%;
+                    object-fit: cover;
                 }
 
             } 
@@ -167,12 +175,16 @@
                 z-index: 1;
                 left: -30px;
                 top: -45px;
+                width: 110px;
+                height: 110px;
+                border-radius: 100%;
+                object-fit: cover;
             }
 
         }
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1024px) {
         .attività{
             padding-block: 150px;
 

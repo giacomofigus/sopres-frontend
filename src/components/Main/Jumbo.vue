@@ -53,24 +53,24 @@
                     <!-- </div> -->
                     
                     <div class="animate-button" :class="{visible: isButtonVisible}">
-                        <a href="">CONTATTACI</a>
+                        <router-link to="/dove-siamo" class="border py-2 px-3 rounded-full btn">CONTATTACI</router-link>
                     </div>
                 </div>
                 <div class="hero-photos">
                     <div class="photo-container flex ps-12 ">
-                        <img src="../../img/test.jpg" class="photo lg:hidden">
-                        <img src="../../img/test.jpg" class="photo big-photo">
-                        <img src="../../img/test-2.jpg" class="photo ">
+                        <img src="../../img/cash-register-3.jpg" class="photo">
+                        <img src="../../img/cash-register-2.jpg" class="photo big-photo">
+                        <img src="../../img/software-gestionale-1.jpg" class="photo ">
                     </div>
                     <div class="photo-container flex pe-12">
-                        <img src="../../img/test.jpg" class="photo">
-                        <img src="../../img/test-2.jpg" class="photo">
-                        <img src="../../img/test.jpg" class="photo">
+                        <img src="../../img/RCH.jpg" class="photo">
+                        <img src="../../img/cash-register-3.jpg" class="photo">
+                        <img src="../../img/assistenza.jpg" class="photo">
                     </div>
                     <div class="photo-container flex ps-8">
-                        <img src="../../img/test-2.jpg" class="photo">
-                        <img src="../../img/test.jpg" class="photo">
-                        <img src="../../img/test-2.jpg" class="photo">
+                        <img src="../../img/helping-1.jpg" class="photo">
+                        <img src="../../img/assistenza2.jpg" class="photo">
+                        <img src="../../img/cash-register-1.jpg" class="photo">
                     </div>
                 </div>
             </div>
@@ -184,9 +184,9 @@
             }   
 
 
-            .big-photo{
-                flex: 2;
-            }
+            // .big-photo{
+            //     flex: 2;
+            // }
         }
     }
 
@@ -296,14 +296,7 @@
                     max-width: 100%; 
                     height: auto;
                 }
-
-
-
-
             }
-
-
-
         }
     }
 
