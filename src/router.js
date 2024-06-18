@@ -4,7 +4,7 @@ import AppHome from './views/AppHome.vue';
 import AppChisiamo from './views/AppChisiamo.vue';
 import AppContatti from './views/AppContatti.vue';
 import AppDovesiamo from './views/AppDovesiamo.vue';
-import AppProdotti from './views/AppProdotti.vue';
+import AppProdotti from './views/Products/AppProdotti.vue';
 
 const router = createRouter({
     history: createWebHistory(),

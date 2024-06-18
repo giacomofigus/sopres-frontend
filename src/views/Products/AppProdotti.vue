@@ -1,18 +1,35 @@
 <script>
+    import ListProducts from './ListProducts.vue';
 
     export default{
         name: "AppProdotti",
         components:{
-            
+            ListProducts
         },
         data(){
             return{
+                // Carosello
+                currentSlide: 0,
+                images: [
+                    { src: '../img/cash-register-1.jpg' },
+                    { src: '../img/cash-register-2.jpg' },
+                ],
+
+
+                // Scroll con drag
                 isDown: false,
                 startX: 0,
                 scrollLeft: 0,          
             };
         },
         methods: {
+            // Carosello
+            changeImage(index){
+                this.currentSlide = index;
+            },  
+
+
+            // Scroll on drag
             mouseDown(e) {
                 this.isDown = true;
                 this.$refs.bottomMenu.classList.add('active');
@@ -45,35 +62,58 @@
 <template>
     
     <main>
+        <!-- TOP NAV -->
         <div class="top-menu">
-            <ul class="flex justify-center  gap-10 py-3">
-                <li class="flex items-center gap-1">
-                    <span>Punti cassa</span>
-                    <fa icon="chevron-down"/>
+            <ul class="menu flex justify-center  gap-10 py-3">
+                <li class="menu-item">
+                    <div>
+                        <span>Punti cassa</span>
+                        <fa class="fa" icon="chevron-down"/>
+                    </div>
+
+                    <ul class="dropdown">
+                        <li>Registratori telematici</li>
+                        <li>POS</li>
+                        <li>Soluzioni Integrate</li>
+                    </ul>
+
                 </li>
-                <li class="flex items-center gap-1">
-                    <span>Bilancie</span> 
-                    <fa icon="chevron-down"/>
+                <li class="menu-item">
+                    <div>
+                        <span>Bilancie</span> 
+                        <fa icon="chevron-down"/>
+                    </div>
+
+                    <ul class="dropdown">
+                        <li>Italiana Macchi</li>
+                        <li>Omega</li>
+                    </ul>
+
                 </li>
-                <li>
+                <li class="menu-item">
                     Accessori
                 </li>
-                <li>
+                <li class="menu-item">
                     Software
                 </li>
             </ul>
         </div>
+
+        <!-- HERO -->
         <div class="hero-section">
             <div class="imgs-container">
-                <img src="../img/cash-register-2.jpg" alt="">
+                <img class="" src="../../img/cash-register-1.jpg" alt="">
+
             </div>
             <h2>I NOSTRI PRODOTTI</h2>
             <div class="elipse-container">
-                <fa class="fa active" icon="circle"/>
+                <!-- <fa class="fa active" icon="circle"/>
                 <fa class="fa" icon="circle"/>
-                <fa class="fa" icon="circle"/>
+                <fa class="fa" icon="circle"/> -->
             </div>
         </div>
+
+        <!-- BOTTOM MENU -->
         <div 
         class="bottom-menu"
         @mousedown="mouseDown"
@@ -88,7 +128,7 @@
                 <!-- Bilancie -->
                 <div class="product flex flex-col justify-center items-center flex-1 ">
                     <figure>
-                        <img class="resize-2" src="../img/bilancia.png" alt="">
+                        <img class="resize-2" src="../../img/bilancia.png" alt="">
                     </figure>
                     <h2>Bilancie</h2>
                 </div>
@@ -96,7 +136,7 @@
                 <!-- Registratore telematico -->
                 <div class="product flex flex-col justify-center items-center  flex-1 ">
                     <figure class="">
-                        <img class="resize" src="../img/registratore-telematico.png" alt="">
+                        <img class="resize" src="../../img/registratore-telematico.png" alt="">
                     </figure>
                     <h2>Registratori telematici</h2>
                 </div>
@@ -104,7 +144,7 @@
                 <!-- Sistemi integrati -->
                 <div class="product flex flex-col justify-center items-center  flex-1  ">
                     <figure>
-                        <img class="" src="../img/sistemi-integrati.png" alt="">
+                        <img class="" src="../../img/sistemi-integrati.png" alt="">
                     </figure>
                     <h2>Sistemi Integrati</h2>
                 </div>
@@ -112,7 +152,7 @@
                 <!-- Accessori -->
                 <div class="product flex flex-col justify-center items-center  flex-1">
                     <figure>
-                        <img class="" src="../img/Accessori.png" alt="">
+                        <img class="" src="../../img/Accessori.png" alt="">
                     </figure>
                     <h2>Accessori</h2>
                 </div>
@@ -120,22 +160,63 @@
                 <!-- Software -->
                 <div class="product flex flex-col justify-center items-center  flex-1">
                     <figure>
-                        <img class="" src="../img/software.jpg" alt="">
+                        <img class="" src="../../img/software.jpg" alt="">
                     </figure>
                     <h2>Software</h2>
                 </div>
             </div>
             
         </div>
+        
+        <!-- LISTA PRODOTTI -->
+         <ListProducts/>
     </main>
     
 
 </template>
 
 <style lang="scss"scoped>
+    main{
+        background-color: #F5F5F7;
+    }
+
     .top-menu{
         background-color: #FF5E37;
         color: white;
+
+        .menu{
+            list-style: none;
+            
+            li{
+                position: relative;
+                cursor: pointer;
+
+                .dropdown{
+                    display: none;
+                    position: absolute;
+                    background-color: white;
+                    min-width: 180px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 5;
+                    color: black;
+
+                    li{
+                        padding: 10px;
+                        border-radius: 10px;
+                    }
+                    li:hover{
+                        background-color: #e0e0e0;
+                    }
+                }
+            }
+
+
+            li:hover .dropdown {
+                display: block;
+            }
+
+
+        }
     }
 
     .hero-section{
