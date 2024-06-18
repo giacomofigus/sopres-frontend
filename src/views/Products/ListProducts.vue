@@ -41,6 +41,11 @@
       openModal(product) {
         this.selectedProduct = product;
         this.modalVisible = true;
+        document.body.style.overflow = 'hidden';
+      },
+      closeModal(){
+        this.modalVisible = false;
+        document.body.style.overflow = '';
       }
     },
     mounted() {
@@ -107,15 +112,21 @@
 
             </div>
         </div>
-        <ShowSingleProduct :product="selectedProduct" :visible="modalVisible" @close="modalVisible = false" />
+        <transition name="modal">
+          <ShowSingleProduct :product="selectedProduct" :visible="modalVisible" @close="closeModal" />
+        </transition>
     </section>
-  </template>
+</template>
   
   
   
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
+
+
   section {
     padding-block: 50px;
+    
+    
   
     h3 {
       font-size: 35px;
@@ -126,8 +137,9 @@
       padding-left: 80px;
   
       span {
-        color: #f88a6e;
+        color: #6d6d6d;
         font-family: 'League Spartan', sans-serif;
+        font-weight: 400;
       }
     }
   
@@ -143,8 +155,8 @@
       .mySwiper {
         // border: 1px solid green;
         margin-bottom: 100px;
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 90px;
+        padding-right: 90px;
         cursor: grab;
   
         .swiper-slide {
@@ -173,7 +185,7 @@
     .left{
         z-index: 10;    
         top: 50%;
-        left: 2.8%;
+        left: 2.2%;
         transform: translate(-50%, -50%);
     }
 
@@ -226,6 +238,7 @@
   @media screen and (max-width: 640px){
     section {
       // padding-inline: 20px;
+      
 
       h3 {
         padding-left: 10px;
