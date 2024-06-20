@@ -75,14 +75,18 @@
         });
     }
   };
-  </script>
+</script>
 
 <template>
     <section>
-        <h3>
-            Tutta la lista.
-            <span class="test">Scegli quello che fa per te.</span>
-        </h3>
+      <!-- TITOLO CON ANIMAZIONE -->
+      <div class="animation">
+        <span class="first">Tutta la lista.</span>
+        <span class="slide">
+          <span class="second">Scegli quello che fa per te.</span>
+        </span>
+      </div>
+
         <div class="container-all">
             <div v-for="(categoryProducts, category) in categorizedProducts" :key="category" class="products-row mb-2 relative">
                 <h4>{{ category }}</h4>
@@ -123,49 +127,73 @@
 <style lang="scss" scoped>
 
 
+
   section {
-    padding-block: 50px;
+    padding-block: 150px;
     
-    
-  
-    h3 {
-      font-size: 35px;
-      font-family: 'League Spartan', sans-serif;
-      color: #f7562e;
-      font-weight: 500;
-      margin-bottom: 30px;
-      padding-left: 80px;
-  
-      span {
-        color: #6d6d6d;
+    .animation{
+      animation: fadeIn 1s forwards;
+      opacity: 0;
+      transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      .first{
+        display: inline-block;
+        animation: firstspan 1s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: 1;
+        position: relative;
+
+        font-size: 35px;
         font-family: 'League Spartan', sans-serif;
-        font-weight: 400;
-      }
-    }
-  
-    .products-row {
-      width: 100%;
-  
-      h4 {
-        font-size: 20px;
-        color: rgba(0, 0, 0, 0.671);
+        color: #f7562e;
+        font-weight: 500;
+        margin-bottom: 30px;
         padding-left: 80px;
       }
+
+      .slide{
+        display: inline-flex;
+        overflow: hidden;
+        
+        .second{
+          z-index: -1;
+          display: inline-block;
+          animation: secondspan 1s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+          color: #6d6d6d;
+          font-family: 'League Spartan', sans-serif;
+          font-weight: 400;
+          font-size: 35px;
+          padding-left: 5px;
+        }
+      }
+    }  
   
-      .mySwiper {
-        // border: 1px solid green;
-        margin-bottom: 100px;
-        padding-left: 90px;
-        padding-right: 90px;
-        cursor: grab;
-  
-        .swiper-slide {
-          display: flex;
-          padding-block: 20px;
-          overflow: hidden;
-  
-          .product {
-            flex: 1;
+    .container-all{
+      // border: 1px solid red;
+      .products-row {
+        border: 1px solid green;
+        margin-bottom: 80px;
+        width: 100%;
+    
+        h4 {
+          font-size: 20px;
+          color: rgba(0, 0, 0, 0.671);
+          padding-left: 90px;
+        }
+    
+        .mySwiper {
+          border: 1px solid blue;
+          padding-left: 90px;
+          padding-right: 90px;
+          cursor: grab;
+    
+          .swiper-slide {
+            display: flex;
+            padding-block: 20px;
+            overflow: hidden;
+    
+            .product {
+              flex: 1;
+            }
           }
         }
       }
@@ -196,26 +224,34 @@
         transform: translate(-50%, -50%);
     }
   }
+
+  
+
   
   @media screen and (max-width: 1024px) {
     section {
       // padding-inline: 20px;
 
-      h3 {
-        padding-left: 30px;
-      }
-
-      .products-row {
-  
-        h4 {
+      .animation{
+        .first{
           padding-left: 30px;
         }
+      } 
 
-        .mySwiper {
-          padding-left: 0;
-          padding-right: 0;
-          padding-inline: 30px;
-         
+      .container-all{
+
+        .products-row {
+    
+          h4 {
+            padding-left: 30px;
+          }
+  
+          .mySwiper {
+            padding-left: 0;
+            padding-right: 0;
+            padding-inline: 30px;
+           
+          }
         }
       }
 
@@ -240,21 +276,38 @@
       // padding-inline: 20px;
       
 
-      h3 {
+      .animation{
+
+      .first{
+        font-size: 28px;
         padding-left: 10px;
+        margin-bottom: -5px; 
       }
 
-      .products-row {
-  
-        h4 {
+      .slide{
+ 
+        
+        .second{
+          font-size: 27px;
+          
           padding-left: 10px;
         }
+      }
+    }  
 
-        .mySwiper {
-          padding-left: 10px;
-          padding-right: 40px;
-          
-          
+      .container-all{
+        .products-row {
+    
+          h4 {
+            padding-left: 10px;
+          }
+  
+          .mySwiper {
+            padding-left: 10px;
+            padding-right: 40px;
+            
+            
+          }
         }
       }
 
@@ -275,6 +328,49 @@
         right: 0;
         transform: translate(-50%, -50%);
       }
+    }
+  }
+
+
+
+
+  // ANIMAZIONI //
+  @keyframes fadeIn{
+    0%{
+      opacity: 0;
+      transform: scale(1);
+    }
+    50%{
+      opacity: 1;
+      transform: scale(1);
+    }
+    100%{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes firstspan{
+    0%{
+      transform: translateX(50%);
+    }
+    60%{
+      transform: translateX(50%);
+    }
+    100%{
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes secondspan{
+    0%{
+      transform: translateX(-100%);
+    }
+    60%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(0%);
     }
   }
 </style>

@@ -64,8 +64,9 @@
     <main>
         <!-- TOP NAV -->
         <div class="top-menu">
-            <ul class="menu flex justify-center  gap-10 py-3">
-                <li class="menu-item">
+            
+            <ul class="menu flex justify-center  gap-10 py-6">
+                <!-- <li class="menu-item">
                     <div>
                         <span>Punti cassa</span>
                         <fa class="fa" icon="chevron-down"/>
@@ -95,7 +96,7 @@
                 </li>
                 <li class="menu-item">
                     Software
-                </li>
+                </li> -->
             </ul>
         </div>
 
@@ -114,59 +115,59 @@
         </div>
 
         <!-- BOTTOM MENU -->
-        <div 
+        <!-- <div 
         class="bottom-menu"
         @mousedown="mouseDown"
         @mouseleave="mouseLeave"
         @mouseup="mouseUp"
         @mousemove="mouseMove"
         ref="bottomMenu"
-        >
+        > -->
             <!-- Riga delle immagini e scritte -->
-            <div class="row-objects flex w-full">
+            <!-- <div class="row-objects flex w-full"> -->
 
                 <!-- Bilancie -->
-                <div class="product flex flex-col justify-center items-center flex-1 ">
+                <!-- <div class="product flex flex-col justify-center items-center flex-1 ">
                     <figure>
                         <img class="resize-2" src="../../img/bilancia.png" alt="">
                     </figure>
                     <h2>Bilancie</h2>
-                </div>
+                </div> -->
 
                 <!-- Registratore telematico -->
-                <div class="product flex flex-col justify-center items-center  flex-1 ">
+                <!-- <div class="product flex flex-col justify-center items-center  flex-1 ">
                     <figure class="">
                         <img class="resize" src="../../img/registratore-telematico.png" alt="">
                     </figure>
                     <h2>Registratori telematici</h2>
-                </div>
+                </div> -->
 
                 <!-- Sistemi integrati -->
-                <div class="product flex flex-col justify-center items-center  flex-1  ">
+                <!-- <div class="product flex flex-col justify-center items-center  flex-1  ">
                     <figure>
                         <img class="" src="../../img/sistemi-integrati.png" alt="">
                     </figure>
                     <h2>Sistemi Integrati</h2>
-                </div>
+                </div> -->
 
                 <!-- Accessori -->
-                <div class="product flex flex-col justify-center items-center  flex-1">
+                <!-- <div class="product flex flex-col justify-center items-center  flex-1">
                     <figure>
                         <img class="" src="../../img/Accessori.png" alt="">
                     </figure>
                     <h2>Accessori</h2>
-                </div>
+                </div> -->
 
                 <!-- Software -->
-                <div class="product flex flex-col justify-center items-center  flex-1">
+                <!-- <div class="product flex flex-col justify-center items-center  flex-1">
                     <figure>
                         <img class="" src="../../img/software.jpg" alt="">
                     </figure>
                     <h2>Software</h2>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
             
-        </div>
+        <!-- </div> -->
         
         <!-- LISTA PRODOTTI -->
          <ListProducts/>
@@ -224,7 +225,7 @@
         background-color: black;
         
         img{
-           height: 450px;
+           height: 500px;
            width: 100%;
            object-fit: cover;
            opacity: 0.7;

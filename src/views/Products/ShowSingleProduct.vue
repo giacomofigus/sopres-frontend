@@ -85,9 +85,10 @@ export default {
         right: 10px;
         background-color:#E8E8EB;
         color:  #545455;
-        font-size: 28px;
+        font-size: 25px;
         padding-inline: 10px;
         border-radius: 40px;
+        cursor: pointer;
       }
 
       .modal-content{
@@ -121,7 +122,7 @@ export default {
           }
 
           img{
-            max-width: 250px;
+            width: 300px;
             margin-top: 20px;
           }
         }
@@ -181,12 +182,17 @@ export default {
 
           .left-container{
             width: 40%;
+
+            img{
+              width: 500px;
+            }
           }
 
           .right-container{
             text-align: left;
             width: 60%;
             padding-right: 40px;
+
           }
         }
       }
