@@ -32,7 +32,8 @@
                 <li class="mb-1 font-light">P.IVA: 01293630925 </li>
                 <li class="mb-1 font-light">Sede legale: Via, Doline, 8</li>
                 <li class="mb-1 font-light">Città: Cagliari (CA)</li>
-                <li class="mb-1 font-light">Email: mailprova@sopres.it</li>
+                <li class="mb-1 font-light">Email Supporto tecnico: sopres.tecnico@gmail.com</li>
+                <li class="mb-1 font-light">Email Amministrazione: sopres.amministrazione@gmail.com</li>
                 <li>
 
                 </li>

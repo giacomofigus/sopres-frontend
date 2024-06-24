@@ -179,6 +179,7 @@
 <style lang="scss"scoped>
     main{
         background-color: #F5F5F7;
+        
     }
 
     .top-menu{
@@ -187,6 +188,7 @@
 
         .menu{
             list-style: none;
+            
             
             li{
                 position: relative;
@@ -222,13 +224,21 @@
 
     .hero-section{
         position: relative;
-        background-color: black;
+        padding: 20px;
         
+        // border: 1px solid red;
+    
+        .imgs-container{
+            background-color: black;
+            border-radius: 20px;
+        }
+
         img{
-           height: 500px;
+           height: 600px;
            width: 100%;
            object-fit: cover;
-           opacity: 0.7;
+           opacity: 0.6;
+           border-radius: 20px;
         }
 
         h2{
@@ -369,11 +379,25 @@
         }
     }
 
-    @media screen and (max-width: 576px){
+    @media screen and (max-width: 640px){
         .top-menu{
             ul{
                 flex-wrap: wrap;
                 row-gap: 20px;
+            }
+        }
+
+        .hero-section{
+            padding: 20px;
+            // border: 1px solid red;
+    
+            .imgs-container{
+                border-radius: 30px;
+            }
+
+            img{
+                height: 700px;
+                border-radius: 30px;
             }
         }
     }

@@ -55,170 +55,154 @@ export default {
     </div>
   </div>
 </template>
-  
 
-  
 <style lang="scss" scoped>
+// Stili per la modalità telefono
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000d9;
 
-  // PHONE START
-  .modal {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
+  .modal-container {
     height: 100%;
-    background-color: #000000d9;
-    // border: 1px solid red;
+    display: flex;
+    align-items: end;
 
-    .modal-container{
-      // border: 1px solid blue;
-      height: 100%;
+    .close {
+      top: 20px;
+      right: 10px;
+      background-color: #E8E8EB;
+      color: #545455;
+      font-size: 25px;
+      padding-inline: 10px;
+      border-radius: 40px;
+      cursor: pointer;
+    }
+
+    .modal-content {
       display: flex;
-      align-items: end;
-      
-      .close{
-        top: 20px;
-        right: 10px;
-        background-color:#E8E8EB;
-        color:  #545455;
-        font-size: 25px;
-        padding-inline: 10px;
-        border-radius: 40px;
-        cursor: pointer;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: white;
+      height: 90%;
+      border-radius: 20px 20px 0 0;
+      overflow-y: auto;
+      padding-block: 20px;
+
+      .left-container, .right-container {
+        padding-inline: 20px;
+        text-align: center;
       }
 
-      .modal-content{
+      .left-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        
-        background-color: white;
-        // border: 2px solid green;
-        height: 90%;
-        border-radius: 20px 20px 0 0;
-        overflow-y: auto;
-        padding-block: 20px;
+        align-items: center;
+        margin-bottom: 30px;
 
-        .left-container, .right-container{
-          padding-inline: 20px;
-          text-align: center;
+        .marca {
+          font-size: 18px;
+          background-color: #E8E8EB;
+          padding: 10px;
+          border-radius: 30px;
         }
 
-        .left-container{
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-bottom: 30px;
+        img {
+          width: 300px;
+          margin-top: 20px;
+        }
+      }
 
-          .marca{
-            font-size: 18px;
-            background-color: #E8E8EB;
-            padding: 10px;
-            border-radius: 30px;
-          }
-
-          img{
-            width: 300px;
-            margin-top: 20px;
-          }
+      .right-container {
+        h3 {
+          font-size: 28px;
+          font-weight: 600;
         }
 
-        .right-container{
-          h3{
-            font-size: 28px;
-            font-weight: 600;
-          }
+        .contact-button {
+          background-color: #F7562E;
+          padding: 7px;
+          border-radius: 20px;
+        }
 
-          .contact-button{
-            background-color: #F7562E;
-            padding: 7px;
-            border-radius: 20px;
-          }
+        h4 {
+          color: #545455;
+          font-weight: bold;
+        }
 
-          h4{
-           color: #545455;
-           font-weight: bold;
-          }
+        p {
+          font-size: 20px;
+        }
 
-          p{
-            font-size: 20px;
-          }
+        .link {
+          color: rgb(76, 196, 243);
+        }
 
-          .link{
-            color: rgb(76, 196, 243);
-          }
-
-          .link:hover{
-            text-decoration: underline;
-          }
+        .link:hover {
+          text-decoration: underline;
         }
       }
     }
   }
+}
 
-  // TABLET
-  @media screen and (min-width: 768px) {
-    .modal{
-      justify-content: center;
-      .modal-container{
-        // position: relative;
-        width: 95%;
-        height: 80%;
+// Stili per la modalità tablet e dispositivi più grandi
+@media screen and (min-width: 768px) {
+  .modal {
+    justify-content: center;
+
+    .modal-container {
+      width: 95%;
+      height: 80%;
+      align-items: center;
+
+      .modal-content {
+        border-radius: 20px 20px 20px 20px;
+        flex-direction: row;
         align-items: center;
 
-        .modal-content{
-          border-radius: 20px 20px 20px 20px;
-          flex-direction: row;
-          align-items: center;
+        .left-container {
+          width: 40%;
 
-          .left-container, .right-container{
-            // border: 1px solid red;
-            
+          img {
+            width: 300px;
           }
+        }
 
-          .left-container{
-            width: 40%;
-
-            img{
-              width: 500px;
-            }
-          }
-
-          .right-container{
-            text-align: left;
-            width: 60%;
-            padding-right: 40px;
-
-          }
+        .right-container {
+          text-align: left;
+          width: 60%;
+          padding-right: 40px;
         }
       }
     }
   }
+}
 
-
-  @media screen and (min-width: 1024px) {
-    .modal{
-      .modal-container{
-        width: 70%;
-      }
+@media screen and (min-width: 1024px) {
+  .modal {
+    .modal-container {
+      width: 70%;
     }
   }
+}
 
-  @media screen and (min-width: 1440px) {
-    .modal{
-      .modal-container{
-        width: 60%;
-      }
+@media screen and (min-width: 1440px) {
+  .modal {
+    .modal-container {
+      width: 60%;
     }
   }
-
-
-
+}
 </style>
+
 
 
 

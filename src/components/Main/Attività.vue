@@ -73,9 +73,9 @@
             </div>
 
             <div class="animate-button" :class="{ visible: isButtonVisible }" >
-                <a href="">
-                    Scopri di piu
-                </a>
+                <router-link to="/chi-siamo" class="">
+                    Scopri di più
+                </router-link>
             </div>
         </div>
     </section>

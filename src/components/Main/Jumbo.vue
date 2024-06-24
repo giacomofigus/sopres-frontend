@@ -53,7 +53,10 @@
                     <!-- </div> -->
                     
                     <div class="animate-button" :class="{visible: isButtonVisible}">
-                        <router-link to="/dove-siamo" class="border py-2 px-3 rounded-full btn">CONTATTACI</router-link>
+
+                        <router-link to="/prodotti" class="border py-2 px-3 rounded-full btn me-10 acquista">ACQUISTA</router-link>
+
+                        <router-link to="/dove-siamo" class="border py-2 px-3 rounded-full btn contattaci">CONTATTACI</router-link>
                     </div>
                 </div>
                 <div class="hero-photos">
@@ -140,6 +143,12 @@
             padding-inline: 25px;
             border-radius: 50px;
             border: 2px solid white;
+        }
+
+        .contattaci{
+            background-color: white;
+            border: 2px solid #FF5E37;
+            color: #FF5E37;
         }
     }
     

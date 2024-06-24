@@ -1,15 +1,15 @@
 <script>
   import axios from 'axios';
   import Product from './Product.vue';
-  import ShowSingleProduct from './ShowSingleProduct.vue'; // Importa il componente modale
+  import ShowSingleProduct from './ShowSingleProduct.vue'; 
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import 'swiper/swiper-bundle.css';
-  
+
   export default {
     name: "ListProducts",
     components: {
       Product,
-      ShowSingleProduct, // Registra il componente modale
+      ShowSingleProduct, 
       Swiper,
       SwiperSlide
     },
@@ -104,7 +104,7 @@
                 @swiper="onSwiper(category, $event)"
                 >
                     <SwiperSlide v-for="product in categoryProducts" :key="product.id" @click="openModal(product)">
-                        <Product :product="product" class="product" />
+                        <Product :product="product" class="product bottom-up-animation" />
                     </SwiperSlide>
                     <div class="arrows left" @click="prevSlide(category)">
                         <fa class="fa" icon="chevron-left"/>
@@ -126,7 +126,13 @@
   
 <style lang="scss" scoped>
 
-
+.modal-enter-active, .modal-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.modal-enter, .modal-leave-to /* .modal-leave-active in <2.1.8 */ {
+  opacity: 0;
+  transform: translateY(100%);
+}
 
   section {
     padding-block: 150px;
@@ -170,7 +176,7 @@
     .container-all{
       // border: 1px solid red;
       .products-row {
-        border: 1px solid green;
+        // border: 1px solid green;
         margin-bottom: 80px;
         width: 100%;
     
@@ -181,7 +187,7 @@
         }
     
         .mySwiper {
-          border: 1px solid blue;
+          // border: 1px solid blue;
           padding-left: 90px;
           padding-right: 90px;
           cursor: grab;
@@ -190,9 +196,13 @@
             display: flex;
             padding-block: 20px;
             overflow: hidden;
-    
+            // border: 1px solid red;
+            
+
             .product {
               flex: 1;
+              opacity: 1;
+              transition: opacity 0.5s ease;
             }
           }
         }
@@ -271,15 +281,16 @@
     }
   }
 
+
   @media screen and (max-width: 640px){
     section {
-      // padding-inline: 20px;
+      padding-block: 80px;
       
 
       .animation{
 
       .first{
-        font-size: 28px;
+        font-size: 32px;
         padding-left: 10px;
         margin-bottom: -5px; 
       }
@@ -288,7 +299,7 @@
  
         
         .second{
-          font-size: 27px;
+          font-size: 32px;
           
           padding-left: 10px;
         }
@@ -296,6 +307,7 @@
     }  
 
       .container-all{
+        margin-top: 50px;
         .products-row {
     
           h4 {
@@ -335,6 +347,7 @@
 
 
   // ANIMAZIONI //
+  // Titolo
   @keyframes fadeIn{
     0%{
       opacity: 0;
@@ -372,6 +385,26 @@
     100%{
       transform: translateX(0%);
     }
+  }
+
+
+
+  // Cards
+  @keyframes bottomUp{
+    0%{
+      transform: translateY(50px);
+    }
+    50%{
+      transform: translateY(0);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+
+  .bottom-up-animation{
+    animation: bottomUp 1.5s forwards;
+    
   }
 </style>
   
