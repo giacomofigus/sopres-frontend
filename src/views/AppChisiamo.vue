@@ -30,6 +30,50 @@
                 <img src="../img/chi-siamo-imgs.png" alt="">
             </div>
         </section>
+
+        <!-- WHY US -->
+        <section class="why-us">
+            <div class="container-why">
+                <h2>Perché noi?</h2>
+                <div class="row first-row">
+                    <p>
+                        <div>
+                            <fa class="icon" icon="sack-dollar"></fa>
+                        </div>
+                        Siamo consapevoli del <span class="text-bold">cambiamento</span>  che l'elettronica ha portato dal 1980. Oggi sebbene essenziale, rimane fuori dalla portata di molte aziende a causa dei <span class="text-bold">costi</span>.
+                    </p>
+                    <div class="img">
+                        <img src="../img/obsoleto.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="row second-row">
+                    <div class="img">
+                        <img src="../img/successo.jpg" alt="">
+                    </div>
+                    <p>
+                        <div>
+                            <fa class="icon" icon="rocket"></fa>
+                        </div>
+                        Siamo qui per eliminare questi <span class="text-bold">ostacoli</span> e permettere alle imprese di <span class="text-bold">beneficiare </span>pienamente delle potenzialità dell'elettronica
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TEAM -->
+        <section class="team">
+            <div class="container-team">
+                <h2>Il nostro Team!</h2>
+                <p>
+                    Team di 6 <span>tecnici specializzati</span> per ogni sistema, autorizzati e competenti nell'intervenire su ognuno dei prodotti.
+                </p>
+            </div>
+            <div class="square">
+                <img src="../img/team.jpeg" alt="">
+            </div>
+        </section>
     </main>
 </template>
 
@@ -37,6 +81,7 @@
 main {
     background-color: #f5f5f5;
 
+    // HERO
     .hero {
         min-height: calc(100vh - 80px);
         display: flex;
@@ -99,7 +144,159 @@ main {
         }
     }
 
+
+    // WHY US
+    .why-us{
+        background-color: #003049;
+        color: white;
+        // border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        padding-block: 50px;
+
+        .container-why{
+            // border: 1px solid green;
+            width: 60%;
+            
+            h2{
+                font-family: 'League Spartan', sans-serif;
+                text-align: center;
+                font-size: 60px;
+                font-weight: 600;
+                margin-bottom: 50px;
+            }
+
+            .icon{
+                display: none;
+            }
+
+            .row{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+
+                // border: 1px solid purple;
+                padding: 5px;
+
+                p{
+                    width: 50%;
+                    font-size: 20px;
+                    font-weight: 300;
+                    // border: 1px solid yellow;
+                }
+
+                .img{
+                    
+                    // border: 1px solid yellow;
+                    display: flex;
+                    align-items: center;
+
+                    img{
+                        width: 50%;
+                        width: 400px;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .first-row{
+                margin-bottom: 20px;
+
+                .img{
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                }
+            }
+
+            .second-row{
+
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 50px;
+                margin-top: 90px;
+                p{
+
+                }
+            }
+        }
+    }
+
+
+    // TEAM
+    .team{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #f5f5f5 88%, #003049 88%);
+        padding-block: 50px;
+        // border: 1px solid red;
+        
+        .container-team{
+            // border: 1px solid green;
+            width: 50%;
+            padding-block: 40px;
+            text-align: center;
+            margin-bottom: 100px;
+
+            h2{
+                font-family: 'League Spartan', sans-serif;
+                font-size: 60px;
+                font-weight: 600;
+                color: #FF5E37;
+            }
+
+            p{
+                margin-top: 20px;
+                font-size: 25px;
+                font-weight: 400;
+
+                span{
+                    font-weight: 900;
+                }
+            }
+        }
+
+        .square{
+            background-color: #D9D9D9;
+            width: 80%;
+            // height: 500px;
+            border-radius: 18px;
+            filter:drop-shadow(0px 0px 16px #000000af);
+
+            img{
+                width: 100%;
+                height: 500px;
+                border-radius: 18px;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    // MEDIA //
+
+    @media screen and (max-width: 1220px) {
+        .why-us{
+            .container-why{
+                width: 75%;
+            }
+        }
+
+
+        .team{
+            .container-team{
+                width: 70%;
+            }
+        }
+    }
+
+    // LAPTOP
     @media screen and (max-width: 1024px) {
+        // HERO
         .hero {
             flex-direction: column;
             padding-inline: 50px;
@@ -123,9 +320,29 @@ main {
                 }
             }
         }
+
+        // WHY US 
+        .why-us{
+            .container-why{
+                width: 90%;
+
+                .row{
+                    .img{
+                        img{
+                            height: 180px;
+                            width: 350px;
+                        }
+                    }
+                }
+            }
+        }
     }
 
+
+    // TABLET
     @media screen and (max-width: 768px){
+
+        // HERO
         .hero {
             padding-inline: 10px;
 
@@ -153,8 +370,72 @@ main {
                 }
             }
         }
+
+
+        //WHY US
+        .why-us{
+            .container-why{
+                width: 100%;
+
+                .row{
+                    .img{
+                        img{
+                            height: 150px;
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        .team{
+            .container-team{
+                width: 100%;
+            }
+        }
     }
 
+    // TELEFONO
+    @media screen and (max-width: 654px){
+        //WHY US
+        .why-us{
+            padding-block: 60px;
+            .container-why{
+                
+
+                .row{
+                    flex-direction: column;
+                    p{
+                    //    flex-direction: column;
+                       display: block;
+                       
+                       width: 80%; 
+                       text-align: center;
+                    }
+
+                    .icon{
+                        display: inline-block;
+                        font-size: 30px;
+                        color: #FF5E37;
+                        margin-bottom: 30px;
+                    }
+
+                    .img{
+                        display: none;
+                        img{
+                            width: auto;
+                            height: auto;
+                            display: none
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // TELEFONO
     @media screen and (max-width: 576px){
         .hero {
 
