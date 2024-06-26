@@ -61,7 +61,18 @@
 
         <!-- WHY US -->
         <section class="why-us">
-            
+            <div class="why-us-container">
+                <div class="why-us-img">
+                    <img src="../img/illustrazione.png" alt="">
+                </div>
+                <div class="why-us-text">
+                    <h4>Perchè noi?</h4>
+                    <p>Siamo consapevoli del cambiamento che l'elettronica ha portato dal 1980. Oggi sebbene essenziale, rimane fuori dalla portata di molte aziende a causa dei costi.</p>
+    
+                    <h4 class="mt-10">Come risolviamo?</h4>
+                    <p>Siamo qui per eliminare questi ostacoli e permettere alle imprese di beneficiare pienamente delle potenzialità dell'elettronica</p>
+                </div>
+            </div>
         </section>
 
 
@@ -188,10 +199,40 @@ main {
         background-color: #003049;
         color: white;
         border: 1px solid red;
-        display: flex;
-        justify-content: center;
+
         padding-block: 50px;
 
+        .why-us-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-direction: row-reverse;
+            // border: 1px solid purple;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        h4{
+            font-size: 50px;
+            font-weight: 600;
+            font-family: 'League Spartan', sans-serif;
+        }
+        
+        p{
+            font-size: 20px;
+        }
+
+        .why-us-img, .why-us-text{
+            flex: 1 1 50%;
+            // border: 1px solid green;
+        }
+
+        .why-us-img{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
         
     }
 
