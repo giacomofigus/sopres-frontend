@@ -61,32 +61,7 @@
 
         <!-- WHY US -->
         <section class="why-us">
-            <div class="container-why">
-                <h2>Perché noi?</h2>
-                <div class="row first-row">
-                    <p>
-                        <div>
-                            <fa class="icon" icon="sack-dollar"></fa>
-                        </div>
-                        Siamo consapevoli del <span class="text-bold">cambiamento</span>  che l'elettronica ha portato dal 1980. Oggi sebbene essenziale, rimane fuori dalla portata di molte aziende a causa dei <span class="text-bold">costi</span>.
-                    </p>
-                    <!-- <div class="img">
-                        <img src="../img/obsoleto.jpg" alt="">
-                    </div> -->
-                </div>
-
-                <div class="row second-row">
-                    <!-- <div class="img">
-                        <img src="../img/successo.jpg" alt="">
-                    </div> -->
-                    <p>
-                        <div>
-                            <fa class="icon" icon="rocket"></fa>
-                        </div>
-                        Siamo qui per eliminare questi <span class="text-bold">ostacoli</span> e permettere alle imprese di <span class="text-bold">beneficiare </span>pienamente delle potenzialità dell'elettronica
-                    </p>
-                </div>
-            </div>
+            
         </section>
 
 
@@ -212,79 +187,12 @@ main {
     .why-us{
         background-color: #003049;
         color: white;
-        // border: 1px solid red;
+        border: 1px solid red;
         display: flex;
         justify-content: center;
         padding-block: 50px;
 
-        .container-why{
-            // border: 1px solid green;
-            width: 60%;
-            
-            h2{
-                font-family: 'League Spartan', sans-serif;
-                text-align: center;
-                font-size: 60px;
-                font-weight: 600;
-                margin-bottom: 50px;
-            }
-
-            .icon{
-                display: none;
-            }
-
-            .row{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 20px;
-
-                // border: 1px solid purple;
-                padding: 5px;
-
-                p{
-                    width: 50%;
-                    font-size: 20px;
-                    font-weight: 300;
-                    // border: 1px solid yellow;
-                }
-
-                .img{
-                    
-                    // border: 1px solid yellow;
-                    display: flex;
-                    align-items: center;
-
-                    img{
-                        width: 50%;
-                        width: 400px;
-                        height: 200px;
-                        object-fit: cover;
-                    }
-                }
-            }
-
-            .first-row{
-                margin-bottom: 20px;
-
-                .img{
-                    display: flex;
-                    justify-content: end;
-                    align-items: center;
-                }
-            }
-
-            .second-row{
-
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 50px;
-                margin-top: 90px;
-                p{
-
-                }
-            }
-        }
+        
     }
 
 
@@ -506,6 +414,10 @@ main {
 
                 a{
                     color: #FF5E37;
+                }
+
+                a:hover{
+                    text-decoration: underline;
                 }
             }
         }
