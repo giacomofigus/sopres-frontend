@@ -3,7 +3,35 @@
         name: "AppChisiamo",
         components:{},
         data(){
-            return {};
+            return {
+                values: [
+                    {
+                        name: "Affidabilità",
+                        description: "Prodotti sicuri e duraturi grazie alla nostra esperienza nel settore.",
+                        icon: "shield"
+                    },
+                    {
+                        name: "Professionalità",
+                        description: "Soluzioni personalizzate e supporto continuo per garantire il corretto funzionamento.",
+                        icon: "briefcase"
+                    },
+                    {
+                        name: "Passione",
+                        description: "Mossi dalla passione per migliorare le operazioni aziendali con soluzioni avanzate e servizio clienti eccezionale.",
+                        icon: "heart"
+                    },
+                    {
+                        name: "Attenzione al cliente",
+                        description: "Assistenza clienti rapida e dedicata alle necessità dei nostri clienti.",
+                        icon: "headset"
+                    },
+                    {
+                        name: "Qualità",
+                        description: "Impegno per standard elevati di prestazioni e affidabilità in ogni prodotto e servizio.",
+                        icon: "check-circle"
+                    }
+                ]
+            };
         },
         methods: {},
         mounted(){}
@@ -42,15 +70,15 @@
                         </div>
                         Siamo consapevoli del <span class="text-bold">cambiamento</span>  che l'elettronica ha portato dal 1980. Oggi sebbene essenziale, rimane fuori dalla portata di molte aziende a causa dei <span class="text-bold">costi</span>.
                     </p>
-                    <div class="img">
+                    <!-- <div class="img">
                         <img src="../img/obsoleto.jpg" alt="">
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="row second-row">
-                    <div class="img">
+                    <!-- <div class="img">
                         <img src="../img/successo.jpg" alt="">
-                    </div>
+                    </div> -->
                     <p>
                         <div>
                             <fa class="icon" icon="rocket"></fa>
@@ -72,6 +100,41 @@
             </div>
             <div class="square">
                 <img src="../img/team.jpeg" alt="">
+            </div>
+        </section>
+
+        <!-- Valori -->
+        <section class="values">
+            <h2>I nostri valori</h2>
+            <p class="subtitle">Diamo valore alle persone, relazioni e il tempo</p>
+
+            <div class="container-values">
+                <div v-for="value in values" class="value">
+                    <h4>{{ value.name }}</h4>
+                    <p>{{ value.description }}</p>
+                    <fa :icon="value.icon" class="icon"></fa>
+                </div>
+            </div>
+        </section>
+        
+        <!-- STORIA -->
+        <section class="story">
+            <div class="container-story">
+                <div class="story-image">
+                    <img src="../img/story.png" alt="">
+                </div>
+                <div class="story-text">
+                    <h2>La nostra storia</h2>
+                    <p>La <span class="text-bold">SO.PR.ES. S.R.L.</span> nasce ufficialmente nel 1980, nell'attuale sede di <span class="text-bold">Cagliari</span>, raccogliendo le esperienze pluridecennali e le competenze di tecnici e imprenditori, decisi a scommettere sulle potenzialità del mercato elettronico.</p>
+                </div>
+            </div>
+            <div class="banner ">
+                <div class="left-button">
+                    <h5>Che aspetti?</h5>
+                </div>
+                <div class="button">
+                    <router-link to="/dove-siamo" class="">Contattaci</router-link>
+                </div>
             </div>
         </section>
     </main>
@@ -277,8 +340,182 @@ main {
     }
 
 
-    // MEDIA //
+    // VALUES
+    .values{
+        background-color: #003049;
+        color: white;
+        padding-top: 100px;
+        padding-bottom: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
 
+        // border: 1px solid red;
+
+        h2{
+            font-family: 'League Spartan', sans-serif;
+            text-align: center;
+            font-size: 60px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .subtitle{
+            font-family: 'League Spartan', sans-serif;
+            text-align: center;
+            font-size: 23px;
+            color: #B3B3B3;
+            font-weight: 300;
+        }
+
+        .container-values{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            width: 65%;
+            margin-top: 50px;
+
+            // border: 1px solid green;
+
+            .value {
+                flex: 1 1 calc(33.333% - 50px); /* 3 per riga */
+                max-width: calc(33.333% - 50px);
+                // border: 1px solid red; 
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+                border-radius: 18px;
+                position: relative;
+                padding: 20px;
+                
+                
+
+                .icon{
+                    position: absolute;
+                    bottom: 0;
+                    height: 100%;
+                    right: 50%;
+                    left: 50%;
+                    width: 100%;
+                    transform: translate(-50%);
+
+                    opacity: 0.05;
+                }
+
+                h4{
+                    font-weight: 600;
+                    font-size: 25px;
+                    font-family: 'League Spartan', sans-serif;
+                }
+
+                p{
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+            }
+
+            .container-values .value:nth-child(4),
+            .container-values .value:nth-child(5) {
+                flex: 1 1 calc(50% - 30px); /* 2 per riga */
+                max-width: calc(50% - 30px);
+            }
+        }
+        
+    }
+
+
+    //STORIA
+    .story{
+        padding-block: 150px;
+        // border: 1px solid red;
+        position: relative;
+
+        .container-story{
+            display: flex;
+            margin: 0 auto;
+            width: 90%;
+            // border: 1px solid green;
+
+            .story-image, .story-text{
+                flex: 1 1 50%;
+                // border: 1px solid purple;
+            }
+
+            .story-image{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .story-text{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-inline: 50px;
+                
+                gap: 10px;
+
+                h2{
+                    font-size: 65px;
+                    font-family: 'League Spartan', sans-serif;
+                    color: #FF5E37;
+                    font-weight: 600;
+                }
+
+                p{
+                    font-size: 22px;
+                
+                }
+            }
+        }
+
+        .banner{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+
+            padding-block: 10px;
+            background-color: #FF5E37;
+            width: 40%;
+            border-radius: 50px;
+
+            display: flex;
+            justify-content: space-between;
+
+            div{
+                text-align: center;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .left-button{
+                h5{
+                    color: white;
+                }
+            }
+
+            .button{
+                background-color: white;
+                margin-right: 10px;
+                border-radius: 30px;
+                padding-block: 15px;
+
+                a{
+                    color: #FF5E37;
+                }
+            }
+        }
+    }
+
+
+
+    /*******  MEDIA ********/
+
+    // LAPTOP 1220px
     @media screen and (max-width: 1220px) {
         .why-us{
             .container-why{
@@ -292,9 +529,30 @@ main {
                 width: 70%;
             }
         }
+
+
+        .values{
+            .container-values{
+                width: 90%;
+            }
+        }
+
+        .story{
+            .container-story{
+                width: 100%;
+                padding-inline: 20px;
+                .story-text{
+                    padding-inline: 20px;
+                    h2{
+                        font-size: 55px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
     }
 
-    // LAPTOP
+    // LAPTOP 1024px
     @media screen and (max-width: 1024px) {
         // HERO
         .hero {
@@ -336,10 +594,28 @@ main {
                 }
             }
         }
+
+
+        // VALUES
+        .values{
+            .container-values{
+                // width: 85%;
+            }
+        }
+
+
+        // STORY
+        .story{
+            padding-block: 180px;
+            .banner{
+                width: 50%;
+                
+            }
+        }
     }
 
 
-    // TABLET
+    // TABLET 768px
     @media screen and (max-width: 768px){
 
         // HERO
@@ -371,7 +647,6 @@ main {
             }
         }
 
-
         //WHY US
         .why-us{
             .container-why{
@@ -388,16 +663,51 @@ main {
             }
         }
 
-
-
+        // TEAM
         .team{
             .container-team{
                 width: 100%;
             }
         }
+
+        // VALUES
+        .values{
+            
+            .container-values{
+                
+                width: 100%;
+                .value {
+                    flex: 1 1 calc(50% - 50px); /* 2 per riga su schermi più piccoli */
+                    max-width: calc(50% - 50px);
+                }
+            }
+        }
+
+        // STORY
+        .story{
+            padding-block: 120px;
+            .container-story{
+                flex-direction: column-reverse;
+                gap: 60px;
+                margin-bottom: 50px;
+
+                .story-text{
+                    h2{
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+
+            .banner{
+                right: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                width: 70%;
+            }
+        }
     }
 
-    // TELEFONO
+    // TELEFONO 654px
     @media screen and (max-width: 654px){
         //WHY US
         .why-us{
@@ -433,9 +743,11 @@ main {
                 }
             }
         }
+
+
     }
 
-    // TELEFONO
+    // TELEFONO 576px
     @media screen and (max-width: 576px){
         .hero {
 
@@ -462,6 +774,41 @@ main {
                 img {
 
                 }
+            }
+        }
+
+        .values{
+            h2{
+                line-height: 1;
+                margin-bottom: 15px;
+                font-size: 55px;
+            }
+
+            h2, .subtitle{
+                padding-inline: 10px;
+            }
+            .container-values{
+                .value {
+                    flex: 1 1 100%; /* 1 per riga su schermi molto piccoli */
+                    max-width: 80%;
+                }
+            }
+        }
+
+        .story{
+            
+            .container-story{
+                text-align: center;
+                padding-inline: 10px;
+                .story-text{
+                    h2{
+                       
+                    }
+                }
+            }
+
+            .banner{
+                width: 90%;
             }
         }
     }
