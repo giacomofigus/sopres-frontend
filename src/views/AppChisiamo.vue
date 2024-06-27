@@ -67,10 +67,10 @@
                 </div>
                 <div class="why-us-text">
                     <h4>Perchè noi?</h4>
-                    <p>Siamo consapevoli del cambiamento che l'elettronica ha portato dal 1980. Oggi sebbene essenziale, rimane fuori dalla portata di molte aziende a causa dei costi.</p>
+                    <p>Siamo consapevoli del <span class="text-bold">cambiamento</span> che l'elettronica ha portato dal 1980. Oggi sebbene essenziale, rimane fuori dalla portata di molte aziende a causa dei <span class="text-bold">costi</span>.</p>
     
-                    <h4 class="mt-10">Come risolviamo?</h4>
-                    <p>Siamo qui per eliminare questi ostacoli e permettere alle imprese di beneficiare pienamente delle potenzialità dell'elettronica</p>
+                    <h4 class="mt-16">Come risolviamo?</h4>
+                    <p>Siamo qui per eliminare questi <span class="text-bold">ostacoli</span> e permettere alle imprese di beneficiare pienamente delle potenzialità dell'<span class="text-bold">elettronica</span></p>
                 </div>
             </div>
         </section>
@@ -198,7 +198,7 @@ main {
     .why-us{
         background-color: #003049;
         color: white;
-        border: 1px solid red;
+        // border: 1px solid red;
 
         padding-block: 50px;
 
@@ -220,7 +220,8 @@ main {
         }
         
         p{
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: 300;
         }
 
         .why-us-img, .why-us-text{
@@ -471,9 +472,10 @@ main {
     // LAPTOP 1220px
     @media screen and (max-width: 1220px) {
         .why-us{
-            .container-why{
-                width: 75%;
+            .why-us-container{
+                width: 90%;
             }
+
         }
 
 
@@ -534,18 +536,10 @@ main {
 
         // WHY US 
         .why-us{
-            .container-why{
+            .why-us-container{
                 width: 90%;
-
-                .row{
-                    .img{
-                        img{
-                            height: 180px;
-                            width: 350px;
-                        }
-                    }
-                }
             }
+
         }
 
 
@@ -602,18 +596,15 @@ main {
 
         //WHY US
         .why-us{
-            .container-why{
+            padding: 0;
+            
+            .why-us-container{
                 width: 100%;
-
-                .row{
-                    .img{
-                        img{
-                            height: 150px;
-                            width: 300px;
-                        }
-                    }
-                }
+                padding-inline: 20px;
+                flex-direction: column;
+                
             }
+
         }
 
         // TEAM
