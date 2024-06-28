@@ -58,12 +58,13 @@ export default {
 
 <style lang="scss" scoped>
 // Stili per la modalità telefono
+
 .modal {
   display: flex;
   align-items: center;
   justify-content: end;
   position: fixed;
-  z-index: 1;
+  z-index: 10000;
   left: 0;
   top: 0;
   width: 100%;
