@@ -1,10 +1,21 @@
 <script>
+import Hamburger from './Hamburger.vue';
 
 
 export default {
     name: "AppHeader",
+    components:{
+        Hamburger
+    },
     data() {
-
+        return{
+            isActive: false
+        }
+    },
+    methods:{
+        menuAction(){
+            this.isActive = !this.isActive
+        }
     }
 };
 </script>
@@ -14,7 +25,7 @@ export default {
         <nav>
             <div class="container-logo">
                 <router-link class="flex items-center" to="/">
-                    <img id="logo" src="../img/logo.png" alt="logo">
+                    <img id="logo" src="../../img/logo.png" alt="logo">
                     <!-- <span class="">Sopres</span> -->
                 </router-link>
             </div>
@@ -37,11 +48,7 @@ export default {
                     </li>
                 </ul>
             </div>
-            <!-- Barre menu telefono -->
-            <div id="menu-mob" class="flex md:hidden">
-                <fa class="hamb" icon="bars" />
-            </div>
-
+            <Hamburger/>
         </nav>
 
     </header>
@@ -52,9 +59,8 @@ export default {
 
 
     header{
-        background-color: white;
+        // background-color: transparent;
         height: 80px;
-        z-index: 100;
     }
 
     #logo{
@@ -76,11 +82,25 @@ export default {
     .container-logo{
         padding-inline: 8px;
     }
-    
-    .hamb{
-        width: 30px;
-        height: 30px;
-        color: #E07132;
+
+   
+
+    .sidebar{
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        color: white;
+        transition: left 0.3s ease;
+        padding: 20px;
+        background-color: #E07132;
+        z-index: 1;
+    }
+
+    .sidebar.open {
+        right: 0;
     }
 
     li{
@@ -91,10 +111,9 @@ export default {
     @media only screen and (max-width: 768px) {
         #logo{
             width: 130px;
+            position: fixed;
+            z-index: 100;
         }
 
-        #menu-mob{
-            padding-inline: 20px;
-        }
     }
 </style>
