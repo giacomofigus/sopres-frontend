@@ -1,5 +1,6 @@
 <script>
     import { store } from '../../store';
+    
 
     export default{
         name: "Product",
@@ -18,10 +19,18 @@
             }
         },
         methods: {
+            handleImageError(event) {
 
+            }
         },
         mounted(){
-            // console.log('Product component received:', this.product);
+
+            if(this.product.img === null){
+                
+                 this.product.img = 'image-not-available.png'
+                 console.log( this.product.img); 
+            }
+            
             
         }
     }
@@ -34,7 +43,7 @@
             <h1>{{ product.nome }}</h1>
         </div>
         <div class="center-card my-8">
-            <img :src="`${store.apiBase}${product.img}`" >
+            <img :src="`${store.apiBase}${product.img}`" @error="handleImageError">
         </div>
         <div class="bottom-card">
             <p>{{ product.marca }}</p>

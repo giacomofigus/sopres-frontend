@@ -85,7 +85,7 @@
                 </p>
             </div>
             <div class="square">
-                <img src="../img/team.jpeg" alt="">
+                <img src="../img/team.jpg" alt="">
             </div>
         </section>
 
@@ -198,7 +198,6 @@ main {
     .why-us{
         background-color: #003049;
         color: white;
-        // border: 1px solid red;
 
         padding-block: 50px;
 
@@ -208,7 +207,6 @@ main {
             align-items: center;
             gap: 50px;
             flex-direction: row-reverse;
-            // border: 1px solid purple;
             width: 70%;
             margin: 0 auto;
         }
@@ -226,13 +224,16 @@ main {
 
         .why-us-img, .why-us-text{
             flex: 1 1 50%;
-            // border: 1px solid green;
         }
 
         .why-us-img{
             display: flex;
             justify-content: end;
             align-items: center;
+            
+            img{
+                width: 100%;
+            }
         }
         
     }
@@ -597,6 +598,7 @@ main {
         //WHY US
         .why-us{
             padding: 0;
+            padding-bottom: 80px;
             
             .why-us-container{
                 width: 100%;
