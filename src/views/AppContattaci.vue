@@ -48,7 +48,7 @@
 import axios from 'axios';
 
 export default {
-    name: "AppDovesiamo",
+    name: "AppContattaci",
     data() {
         return {
             nome: '',

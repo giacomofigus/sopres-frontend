@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import AppHome from './views/AppHome.vue';
 import AppChisiamo from './views/AppChisiamo.vue';
-import AppContatti from './views/AppContatti.vue';
-import AppDovesiamo from './views/AppDovesiamo.vue';
+// import AppContatti from './views/AppContatti.vue';
+import AppContattaci from './views/AppContattaci.vue';
 import AppProdotti from './views/Products/AppProdotti.vue';
 
 const router = createRouter({
@@ -12,30 +12,49 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: AppHome
+            component: AppHome  ,
+            meta: {
+                title: "Sopres",
+            }
         },
         {
             path: '/chi-siamo',
             name: 'chi-siamo',
-            component: AppChisiamo
+            component: AppChisiamo,
+            meta: {
+                title: "Chi siamo",
+            }
         },
+        // {
+        //     path: '/contatti',
+        //     name: 'contatti',
+        //     component: AppContatti,
+        //     meta: {
+        //         title: "Contatti",
+        //     }
+        // },
         {
-            path: '/contatti',
-            name: 'contatti',
-            component: AppContatti
-        },
-        {
-            path: '/dove-siamo',
-            name: 'dove-siamo',
-            component: AppDovesiamo
+            path: '/contattaci',
+            name: 'contattaci',
+            component: AppContattaci,
+            meta: {
+                title: "Contattaci",
+            }
         },
         {
             path: '/prodotti',
             name: 'prodotti',
-            component: AppProdotti
+            component: AppProdotti,
+            meta: {
+                title: "Prodotti",
+            }
         },
         
     ]
 });
+
+router.beforeEach((to, from) => {
+    document.title = to.meta?.title ?? "Default Title"
+})
 
 export { router };
