@@ -81,7 +81,7 @@ export default {
             this.successMessageVisible = false;
             this.errorMessage = '';
 
-            axios.post('http://127.0.0.1:8000/api/messages', data)
+            axios.post('https://lightsalmon-mandrill-381882.hostingersite.com/api/messages', data)
                 .then(res => {
                     if (res.data.success) {
                         this.successMessage = 'Messaggio inviato con successo!';
