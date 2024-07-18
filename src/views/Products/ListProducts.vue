@@ -49,7 +49,7 @@
       }
     },
     mounted() {
-      axios.get('http://lightsalmon-mandrill-381882.hostingersite.com/api/products')
+      axios.get('https://127.0.0.1:8000/api/products')
         .then(response => {
           this.products = response.data.products;
   
