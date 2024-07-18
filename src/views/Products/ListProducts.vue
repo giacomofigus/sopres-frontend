@@ -49,7 +49,7 @@
       }
     },
     mounted() {
-      axios.get('https://127.0.0.1:8000/api/products')
+      axios.get('https://darkcyan-cod-644090.hostingersite.com/api/products')
         .then(response => {
           this.products = response.data.products;
   
