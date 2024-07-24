@@ -81,11 +81,12 @@ export default {
             this.successMessageVisible = false;
             this.errorMessage = '';
 
-            axios.post('https://lightsalmon-mandrill-381882.hostingersite.com/api/messages', data)
+            axios.post('https://api.provaditest.shop/api/messages', data)
                 .then(res => {
                     if (res.data.success) {
                         this.successMessage = 'Messaggio inviato con successo!';
                         this.successMessageVisible = true;
+                        // console.log(response.data)
 
                         setTimeout(() => {
                             this.successMessageVisible = false;

@@ -49,9 +49,11 @@
       }
     },
     mounted() {
-      axios.get('https://darkcyan-cod-644090.hostingersite.com/api/products')
+      axios.get('https://api.provaditest.shop/api/products')
         .then(response => {
           this.products = response.data.products;
+
+          console.log(this.products)
   
           // Trova e salva le categorie uniche dai prodotti
           this.categories = this.products.reduce((uniqueCategories, product) => {
