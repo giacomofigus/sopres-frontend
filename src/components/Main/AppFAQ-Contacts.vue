@@ -21,6 +21,7 @@
                 cognome: '',
                 email: '',
                 messaggio: '',
+                termini: '',
 
                 errors: {},
                 loading: false,
@@ -42,7 +43,8 @@
                     nome: this.nome,
                     cognome: this.cognome,
                     email: this.email,
-                    messaggio: this.messaggio
+                    messaggio: this.messaggio,
+                    termini: this.termini
                 };
 
                 this.errors = {};
@@ -50,7 +52,7 @@
                 this.successMessageVisible = false;
                 this.errorMessage = '';
 
-                axios.post('http://127.0.0.1:8000/api/messages', data).then(res => {
+                axios.post('https://api.provaditest.shop/api/messages', data).then(res => {
                     if (res.data.success) {
                         this.successMessage = 'Messaggio inviato con successo!';
                         this.successMessageVisible = true;
@@ -63,6 +65,7 @@
                         this.cognome = '';
                         this.email = '';
                         this.messaggio = '';
+                        this.termini = '';
                     } else {
                         this.errorMessage = 'Si è verificato un errore durante l\'invio del messaggio.';
                     }
@@ -80,7 +83,7 @@
                 });
             },
             validateForm() {
-                if (!this.nome || !this.cognome || !this.email || !this.messaggio) {
+                if (!this.nome || !this.cognome || !this.email || !this.messaggio || !this.termini) {
                     this.errorMessage = 'Compila tutti i campi obbligatori.';
                     return false;
                 }
@@ -136,6 +139,16 @@
                 <div class="flex flex-col">
                     <label for="messaggio" class="mb-2">Messaggio <span>*</span></label>
                     <textarea id="messaggio" name="messaggio" class="border border-gray-300 p-2 h-32" v-model="messaggio"></textarea>
+                </div>
+
+                <div class="flex items-center">
+
+                    <input type="checkbox" name="termini" id="termini" v-model="termini">
+                    <label for="termini" class="termini ms-2">Accetto i 
+                        <a href="https://www.termsfeed.com/live/65735f6b-caba-4c1c-97ad-a80f4fdc654f" class="termini text-blue-600 dark:text-blue-500 hover:underline">Termini e condizioni 
+                            <span>*</span>
+                        </a>
+                    </label>
                 </div>
 
                 <button type="submit" class="bg-blue-500 text-white p-2 mx-auto">Invia</button>

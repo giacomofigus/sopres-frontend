@@ -1,9 +1,6 @@
 <script>
     export default{
         name: "AppFooter",
-        components:{
-            
-        }
     };
 </script>
 
@@ -15,16 +12,30 @@
             <ul>
                 <li class="title mb-2 text-bold">ABOUT US</li>
                 <li class="mb-1 font-light">FAQs</li>
-                <li class="mb-1 font-light">Contattaci</li>
-                <li class="mb-1 font-light">Home</li>
+                <li class="mb-1 font-light">
+                    <router-link to="/contattaci">Contattaci</router-link>
+                </li>
+                <li class="mb-1 font-light">
+                    <router-link to="/chi-siamo">Chi siamo</router-link>
+                </li>
+                <li class="mb-1 font-light">
+                    <router-link to="/">Home</router-link>
+                </li>
+                <li class="mb-1 font-light">
+                    <router-link to="/privacy-&-policy">Privacy Policy</router-link>
+                </li>
+                <li class="mb-1 font-light">Cookie Policy</li>
             </ul>
             <ul>
-                <li class="title mb-2 text-bold">PRODOTTI</li>
+                <li class="title mb-2 text-bold">
+                    <router-link to="/prodotti">PRODOTTI</router-link>
+                </li>
                 <li class="mb-1 font-light">Registratori di cassa</li>
                 <li class="mb-1 font-light">Bilancie</li>
                 <li class="mb-1 font-light">Custom</li>
                 <li class="mb-1 font-light">Epson</li>
                 <li class="mb-1 font-light">RCH</li>
+                <li class="mb-1 font-light">Ditronetwork</li>
             </ul>
             <ul>
                 <li class="title mb-2 text-bold">CONTATTI</li>
@@ -54,9 +65,4 @@
             justify-content: center;
         }
     }
-
-    @media screen and (max-width: 576px){
-
-    }
-
 </style>

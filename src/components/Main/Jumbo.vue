@@ -56,24 +56,24 @@
 
                         <router-link to="/prodotti" class="border py-2 px-3 rounded-full btn me-10 acquista">ACQUISTA</router-link>
 
-                        <router-link to="/dove-siamo" class="border py-2 px-3 rounded-full btn contattaci">CONTATTACI</router-link>
+                        <router-link to="/contattaci" class="border py-2 px-3 rounded-full btn contattaci">CONTATTACI</router-link>
                     </div>
                 </div>
                 <div class="hero-photos">
                     <div class="photo-container flex ps-12 ">
-                        <img src="../../img/cash-register-3.jpg" class="photo">
-                        <img src="../../img/cash-register-2.jpg" class="photo big-photo">
-                        <img src="../../img/software-gestionale-1.jpg" class="photo ">
+                        <img src="../../img/cash-register-3.webp" class="photo" alt="registratore-di-cassa" loading="lazy">
+                        <img src="../../img/cash-register-2.webp" class="photo big-photo" alt="registratore-di-cassa-touch" loading="lazy">
+                        <img src="../../img/software-gestionale-1.webp" class="photo " alt="cloud-e-reti" loading="lazy">
                     </div>
                     <div class="photo-container flex pe-12">
-                        <img src="../../img/RCH.jpg" class="photo">
-                        <img src="../../img/cash-register-3.jpg" class="photo">
-                        <img src="../../img/assistenza.jpg" class="photo">
+                        <img src="../../img/RCH.jpg" class="photo" alt="prodotti-rch" loading="lazy">
+                        <img src="../../img/cash-register-3.webp" class="photo" alt="registratore-di-cassa" loading="lazy">
+                        <img src="../../img/assistenza_1.jpg" class="photo" alt="assistenza-telefonica" loading="lazy">
                     </div>
                     <div class="photo-container flex ps-8">
-                        <img src="../../img/helping-1.jpg" class="photo">
-                        <img src="../../img/assistenza2.jpg" class="photo">
-                        <img src="../../img/cash-register-1.jpg" class="photo">
+                        <img src="../../img/helping-1.webp" class="photo" alt="assistenza-da-computer" loading="lazy">
+                        <img src="../../img/assistenza2.webp" class="photo" alt="cassetti-automatici" loading="lazy">
+                        <img src="../../img/cash-register-1.jpg" class="photo" alt="sistema-di-pagamento" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -191,11 +191,6 @@
             .photo.visible {
                  opacity: 1;
             }   
-
-
-            // .big-photo{
-            //     flex: 2;
-            // }
         }
     }
 
@@ -210,11 +205,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-
-
-
-
-
 
     /*****  RESPONSIVE SCREEN  ******/
     @media screen and (max-width: 1300px) {
@@ -248,6 +238,7 @@
             overflow-x: hidden;
             overflow-y: auto;
             align-items: start;
+            padding-block: 50px;
 
             .hero-section{
                 flex-direction: column;

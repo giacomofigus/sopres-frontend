@@ -66,37 +66,7 @@
         <div class="top-menu">
             
             <ul class="menu flex justify-center  gap-10 py-6">
-                <!-- <li class="menu-item">
-                    <div>
-                        <span>Punti cassa</span>
-                        <fa class="fa" icon="chevron-down"/>
-                    </div>
 
-                    <ul class="dropdown">
-                        <li>Registratori telematici</li>
-                        <li>POS</li>
-                        <li>Soluzioni Integrate</li>
-                    </ul>
-
-                </li>
-                <li class="menu-item">
-                    <div>
-                        <span>Bilancie</span> 
-                        <fa icon="chevron-down"/>
-                    </div>
-
-                    <ul class="dropdown">
-                        <li>Italiana Macchi</li>
-                        <li>Omega</li>
-                    </ul>
-
-                </li>
-                <li class="menu-item">
-                    Accessori
-                </li>
-                <li class="menu-item">
-                    Software
-                </li> -->
             </ul>
         </div>
 
@@ -108,66 +78,11 @@
             </div>
             <h2>I NOSTRI PRODOTTI</h2>
             <div class="elipse-container">
-                <!-- <fa class="fa active" icon="circle"/>
-                <fa class="fa" icon="circle"/>
-                <fa class="fa" icon="circle"/> -->
+
             </div>
         </div>
 
-        <!-- BOTTOM MENU -->
-        <!-- <div 
-        class="bottom-menu"
-        @mousedown="mouseDown"
-        @mouseleave="mouseLeave"
-        @mouseup="mouseUp"
-        @mousemove="mouseMove"
-        ref="bottomMenu"
-        > -->
-            <!-- Riga delle immagini e scritte -->
-            <!-- <div class="row-objects flex w-full"> -->
 
-                <!-- Bilancie -->
-                <!-- <div class="product flex flex-col justify-center items-center flex-1 ">
-                    <figure>
-                        <img class="resize-2" src="../../img/bilancia.png" alt="">
-                    </figure>
-                    <h2>Bilancie</h2>
-                </div> -->
-
-                <!-- Registratore telematico -->
-                <!-- <div class="product flex flex-col justify-center items-center  flex-1 ">
-                    <figure class="">
-                        <img class="resize" src="../../img/registratore-telematico.png" alt="">
-                    </figure>
-                    <h2>Registratori telematici</h2>
-                </div> -->
-
-                <!-- Sistemi integrati -->
-                <!-- <div class="product flex flex-col justify-center items-center  flex-1  ">
-                    <figure>
-                        <img class="" src="../../img/sistemi-integrati.png" alt="">
-                    </figure>
-                    <h2>Sistemi Integrati</h2>
-                </div> -->
-
-                <!-- Accessori -->
-                <!-- <div class="product flex flex-col justify-center items-center  flex-1">
-                    <figure>
-                        <img class="" src="../../img/Accessori.png" alt="">
-                    </figure>
-                    <h2>Accessori</h2>
-                </div> -->
-
-                <!-- Software -->
-                <!-- <div class="product flex flex-col justify-center items-center  flex-1">
-                    <figure>
-                        <img class="" src="../../img/software.jpg" alt="">
-                    </figure>
-                    <h2>Software</h2>
-                </div> -->
-            <!-- </div> -->
-            
-        <!-- </div> -->
         
         <!-- LISTA PRODOTTI -->
          <ListProducts/>
@@ -362,6 +277,10 @@
     }
 
     @media screen and (max-width: 768px){
+        main{
+            padding-top: 80px;
+        }
+
         .hero-section{
             img{
                 height: 400px;
@@ -380,6 +299,7 @@
     }
 
     @media screen and (max-width: 640px){
+
         .top-menu{
             ul{
                 flex-wrap: wrap;

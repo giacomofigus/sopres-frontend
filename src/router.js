@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import AppHome from './views/AppHome.vue';
 import AppChisiamo from './views/AppChisiamo.vue';
-// import AppContatti from './views/AppContatti.vue';
 import AppContattaci from './views/AppContattaci.vue';
 import AppProdotti from './views/Products/AppProdotti.vue';
+import AppPrivacy from './views/AppPrivacy.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -25,14 +25,6 @@ const router = createRouter({
                 title: "Chi siamo",
             }
         },
-        // {
-        //     path: '/contatti',
-        //     name: 'contatti',
-        //     component: AppContatti,
-        //     meta: {
-        //         title: "Contatti",
-        //     }
-        // },
         {
             path: '/contattaci',
             name: 'contattaci',
@@ -49,6 +41,14 @@ const router = createRouter({
                 title: "Prodotti",
             }
         },
+        {
+            path: '/privacy-&-policy',
+            name: 'privacy-&-policy',
+            component: AppPrivacy,
+            meta: {
+                title: "Privacy & Policy",
+            }
+        }
         
     ]
 });

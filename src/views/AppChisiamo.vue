@@ -33,8 +33,6 @@
                 ]
             };
         },
-        methods: {},
-        mounted(){}
     };
 </script>
 
@@ -51,11 +49,11 @@
                     <span>gestione aziendale</span> alleviando al contempo il peso delle gestioni fiscali e <span>burocratiche</span>.
                 </p>
                 <div>
-                    <router-link to="/dove-siamo" class="border py-2 px-3 rounded-full btn">Contattaci</router-link>
+                    <router-link to="/contattaci" class="border py-2 px-3 rounded-full btn">Contattaci</router-link>
                 </div>
             </div>
             <div class="right-hero">
-                <img src="../img/chi-siamo-imgs.png" alt="">
+                <img src="../img/chi-siamo-imgs.png" alt="chi-siamo">
             </div>
         </section>
 
@@ -63,7 +61,7 @@
         <section class="why-us">
             <div class="why-us-container">
                 <div class="why-us-img">
-                    <img src="../img/illustrazione.png" alt="">
+                    <img src="../img/illustrazione.png" alt="vettoriale-assistenza">
                 </div>
                 <div class="why-us-text">
                     <h4>Perchè noi?</h4>
@@ -85,7 +83,7 @@
                 </p>
             </div>
             <div class="square">
-                <img src="../img/team.jpg" alt="">
+                <img src="../img/team.jpg" alt="mani-col-pugno-team">
             </div>
         </section>
 
@@ -107,7 +105,7 @@
         <section class="story">
             <div class="container-story">
                 <div class="story-image">
-                    <img src="../img/story.png" alt="">
+                    <img src="../img/story.png" alt="registratore-di-cassa-antico-cagliari-città">
                 </div>
                 <div class="story-text">
                     <h2>La nostra storia</h2>
@@ -119,7 +117,7 @@
                     <h5>Che aspetti?</h5>
                 </div>
                 <div class="button">
-                    <router-link to="/dove-siamo" class="">Contattaci</router-link>
+                    <router-link to="/contattaci" class="">Contattaci</router-link>
                 </div>
             </div>
         </section>
@@ -569,6 +567,8 @@ main {
         // HERO
         .hero {
             padding-inline: 10px;
+            padding-top: 120px;
+            padding-bottom: 80px;
 
             .left-hero, .right-hero {
 
@@ -600,10 +600,13 @@ main {
             padding: 0;
             padding-bottom: 80px;
             
+            
             .why-us-container{
                 width: 100%;
                 padding-inline: 20px;
                 flex-direction: column;
+                padding-block: 100px;
+                padding-top: 0;
                 
             }
 

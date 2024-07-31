@@ -25,7 +25,7 @@ export default {
         <nav>
             <div class="container-logo">
                 <router-link class="flex items-center" to="/">
-                    <img id="logo" src="../../img/logo.png" alt="logo">
+                    <img id="logo" src="../../img/logo.png" alt="logo-sopres">
                     <!-- <span class="">Sopres</span> -->
                 </router-link>
             </div>
@@ -43,6 +43,9 @@ export default {
                     <li class="">
                         <router-link to="/prodotti">Prodotti</router-link>
                     </li>
+                    <li class="">
+                        <router-link to="/privacy-&-policy">Privacy Policy</router-link>
+                    </li>
                     <li class="rounded-full ">
                         <router-link to="/contattaci" class="border py-2 px-3 rounded-full btn">Contattaci</router-link>
                     </li>
@@ -59,8 +62,9 @@ export default {
 
 
     header{
-        // background-color: transparent;
+        background-color: white;
         height: 80px;
+        
     }
 
     #logo{
@@ -109,6 +113,13 @@ export default {
     
 
     @media only screen and (max-width: 768px) {
+        header{
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 100;
+        }
+
         #logo{
             width: 130px;
             position: fixed;
@@ -116,4 +127,5 @@ export default {
         }
 
     }
+
 </style>

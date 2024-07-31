@@ -15,7 +15,7 @@ export default {
         <!-- PARTE SUPERIORE DELLA CARTA -->
         <div id="top-card" class="flex items-center mb-6">
             <div class="me-5">
-                <img :src="testimonial.imgSrc" class="photo big-photo rounded-full ">
+                <img :src="testimonial.imgSrc" class="photo big-photo rounded-full " alt="immagine-profilo">
             </div>
             <div>
                 <h4>{{ testimonial.name }}</h4>
@@ -105,9 +105,5 @@ export default {
             }
         }
     }
-}
-
-@media screen and (max-width: 576px) {
-
 }
 </style>

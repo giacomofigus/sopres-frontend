@@ -4,27 +4,61 @@
     import AppTestimonials from './AppTestimonials.vue';
     import AppCustomers from './AppCustomers.vue';
     import AppFAQContacts from './AppFAQ-Contacts.vue';
+    import CookieBanner from '../CookieBanner.vue';
     
 
-    export default{
-        name: "AppMain",
-        components:{
-            Jumbo,
-            Attività,
-            AppTestimonials,
-            AppCustomers,
-            AppFAQContacts
-        },
-        data(){
-
-        },
-        methods: {
-
-        },
-        mounted(){
-
-        }
+    export default {
+  name: "AppMain",
+  components: {
+    Jumbo,
+    Attività,
+    AppTestimonials,
+    AppCustomers,
+    AppFAQContacts,
+    CookieBanner
+  },
+  data() {
+    return {
+      showCookieBanner: true
     };
+  },
+  methods: {
+    setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    },
+    getCookie(name) {
+      let nameEQ = name + "=";
+      let ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    },
+    eraseCookie(name) {
+      document.cookie = name + '=; Max-Age=-99999999;';
+    },
+    acceptCookies() {
+      this.setCookie('acceptedCookies', 'true', 365);
+      this.showCookieBanner = false;
+    },
+    checkCookies() {
+      if (this.getCookie('acceptedCookies')) {
+        this.showCookieBanner = false;
+      }
+    }
+  },
+  mounted() {
+    this.checkCookies();
+  }
+};
 
 </script>
 
@@ -49,8 +83,10 @@
 
         
 
-        
+        <CookieBanner v-if="showCookieBanner" @accept="acceptCookies" />
     </main>
+
+    
 
 </template>
 

@@ -56,7 +56,7 @@
     <section class="attività ">
         <div class="">
             <div class="title-container relative">
-                <img class="img-1 absolute animate-img" src="../../img/pharmacy.jpg" alt="" :class="{ visible: isImgVisible }">
+                <img class="img-1 absolute animate-img" src="../../img/pharmacy.webp" alt="farmacia" :class="{ visible: isImgVisible }" loading="lazy">
                 <h2 class="animate-title" :class="{ visible: isTitleVisible }">HAI UN'<br> ATTIVITÀ?</h2>
             </div>
 
@@ -68,8 +68,8 @@
 
                 </p>
 
-                <img class="img-2 rounded-full absolute animate-img " src="../../img/restaurant.jpg" alt="" :class="{ visible: isImgVisible2 }">
-                <img class="img-3 rounded-full absolute animate-img " src="../../img/negozio-abbigliamento.jpg" alt="" :class="{ visible: isImgVisible3 }">
+                <img class="img-2 rounded-full absolute animate-img " src="../../img/restaurant.webp" alt="ristorante" :class="{ visible: isImgVisible2 }" loading="lazy">
+                <img class="img-3 rounded-full absolute animate-img " src="../../img/negozio-abbigliamento.webp" alt="negozio-di-abbigliamento" :class="{ visible: isImgVisible3 }" loading="lazy">
             </div>
 
             <div class="animate-button" :class="{ visible: isButtonVisible }" >
@@ -85,9 +85,6 @@
 
     .attività{
         padding-block: 100px;
-        
-        // border: 1px solid red;
-
         div{
             display: flex;
             flex-direction: column;
@@ -187,59 +184,18 @@
     @media screen and (max-width: 1024px) {
         .attività{
             padding-block: 150px;
-
-        div{
-
-
-            h2{
-
-            }
-
-            .paragraph-container{
-
-                width: 70%;
-
-                p{
-
-                }
-
-                .img-2{
-
-                }
-
-                .img-3{
-
-                }
-
-            } 
-
-            span{
-
-            }
-
             div{
-                a{
-
-                }
+                .paragraph-container{
+                    width: 70%;
+                } 
             }
-
-            // POSIZIONI IMMAGINI
-            .title-container img{
-
-            }
-
         }
-    }
     }
     
     // TABLET
     @media screen and (max-width: 768px) {
         .attività{
-            
-            // height: 100vh;
             div{
-                
-    
                 h2{
                     font-size: 70px;
                 }
@@ -266,49 +222,21 @@
 
         div{
 
-
             h2{
                 font-size: 55px;
             }
 
             .paragraph-container{
-
                 width: 100%;
                 padding-inline: 20px;
-
-                p{
-
-                }
-
-                .img-2{
-
-                }
-
-                .img-3{
-
-                }
-
             } 
-
-            span{
-
-            }
 
             div{
                 a{
                     font-size: 18px;
                 }
             }
-
-            // POSIZIONI IMMAGINI
-            .title-container img{
-
-            }
-
         }
-    }
-    }
-       
-    
-
+        }
+    }   
 </style> 

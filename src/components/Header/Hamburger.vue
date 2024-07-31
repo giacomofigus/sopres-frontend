@@ -49,7 +49,7 @@ export default {
                     <router-link to="/prodotti">Prodotti</router-link>
                 </li>
                 <li class="rounded-full " @click="menuAction">
-                    <router-link to="/dove-siamo" class="border py-2 px-3 rounded-full btn">Contattaci</router-link>
+                    <router-link to="/contattaci" class="border py-2 px-3 rounded-full btn">Contattaci</router-link>
                 </li>
             </ul>
         </div>

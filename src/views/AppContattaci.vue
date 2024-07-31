@@ -27,6 +27,29 @@
                         <textarea id="messaggio" name="messaggio" class="border border-gray-300 p-2 h-32" v-model="messaggio" ></textarea>
                     </div>
 
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+
+                            <input type="checkbox" name="termini" id="termini" v-model="termini">
+                            <label for="termini" class="termini ms-2">Accetto i 
+                                <a href="https://www.termsfeed.com/live/65735f6b-caba-4c1c-97ad-a80f4fdc654f" class="termini text-blue-600 dark:text-blue-500 hover:underline">Termini e condizioni 
+                                    <span>*</span>
+                                </a>
+                            </label>
+                        </div>
+
+                        <div class="text-bold text-white">
+                            <span class="color">*</span> sono i campi obbligatori
+                        </div>
+
+                    </div>
+
+                    <div class="text-white text-bold">
+
+                    </div>
+
+
+
                     <button type="submit" class="bg-blue-500 text-white p-2 mx-auto">Invia</button>
 
                     <div v-if="loading" class="loading-overlay">
@@ -55,6 +78,7 @@ export default {
             cognome: '',
             email: '',
             messaggio: '',
+            termini: '',
 
             errors: {},
             loading: false,
@@ -73,7 +97,8 @@ export default {
                 nome: this.nome,
                 cognome: this.cognome,
                 email: this.email,
-                messaggio: this.messaggio
+                messaggio: this.messaggio,
+                termini: this.termini
             };
 
             this.errors = {};
@@ -96,6 +121,7 @@ export default {
                         this.cognome = '';
                         this.email = '';
                         this.messaggio = '';
+                        this.termini = '';
                     } else {
                         this.errorMessage = 'Si è verificato un errore durante l\'invio del messaggio.';
                     }
@@ -113,7 +139,7 @@ export default {
                 });
         },
         validateForm() {
-            if (!this.nome || !this.cognome || !this.email || !this.messaggio) {
+            if (!this.nome || !this.cognome || !this.email || !this.messaggio || !this.termini ) {
                 this.errorMessage = 'Compila tutti i campi obbligatori.';
                 return false;
             }
@@ -135,6 +161,11 @@ main {
         iframe {
             border-radius: 0px;
         }
+    }
+
+    /* ASTERISCO */
+    .color{
+        color: #E07132;
     }
 
     .info-container {
@@ -169,6 +200,10 @@ main {
             textarea {
                 border-radius: 10px;
                 height: 100px;
+            }
+
+            .termini{
+                font-size: 15px;
             }
 
             button {
@@ -260,6 +295,7 @@ main {
 
 @media screen and (max-width: 768px) {
     main {
+        padding-top: 80px;
         height: auto;
         .big-container {
             flex-direction: column;

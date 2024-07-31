@@ -6,15 +6,6 @@
         components:{
             AppMain
         },
-        data(){
-
-        },
-        methods: {
-
-        },
-        mounted(){
-
-        }
     };
 
 </script>

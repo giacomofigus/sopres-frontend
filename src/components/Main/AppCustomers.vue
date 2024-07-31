@@ -25,7 +25,7 @@
 <template>
     <div class="container flex" >
         <div class="image-container" data-aos="fade-right">
-            <img src="../../img/cagliari-pin.png" alt="Descrizione dell'immagine">
+            <img src="../../img/cagliari-pin.png" alt="sardegna-3d-pin-cagliari" loading="lazy">
         </div>
         <div class="text-container" >
             <h1 data-aos="fade-up" >Più di <span>1000</span> clienti in tutta la sardegna</h1>

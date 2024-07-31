@@ -43,7 +43,7 @@
             <h1>{{ product.nome }}</h1>
         </div>
         <div class="center-card my-8">
-            <img :src="`${store.apiBase}${product.img}`" @error="handleImageError">
+            <img :src="`${store.apiBase}${product.img}`" @error="handleImageError" :alt="`${product.nome}`">
         </div>
         <div class="bottom-card">
             <p>{{ product.marca }}</p>

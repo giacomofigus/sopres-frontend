@@ -43,7 +43,7 @@ export default {
           <div class="flex items-center justify-between">
             <h4>{{ product.categoria }}</h4>
             <span class="contact-button">
-              <router-link to="/dove-siamo" class="text-white" @click="close">
+              <router-link to="/contattaci" class="text-white" @click="close">
                 Contattaci
               </router-link>
             </span>
