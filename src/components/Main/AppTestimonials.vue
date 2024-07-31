@@ -23,7 +23,6 @@
                         company: "zenith.com",
                         feedbackTitle: "Azienda con ottimo servizio!",
                         feedback: "Quest'azienda ha veramente colpito sulla gestione del mio ristorante. Assistenti gentilissimi e professionali. Li richiamerei sicuramente in caso di problemi!",
-                        imgSrc: "https://picsum.photos/100/100"
                     },
                     {
                         id: 2,
@@ -31,7 +30,6 @@
                         company: "example.com",
                         feedbackTitle: "Azienda con ottimo servizio!",
                         feedback: "Quest'azienda ha veramente colpito sulla gestione del mio ristorante. Assimerei sicuramente in caso di problemi!",
-                        imgSrc: "https://picsum.photos/100/100"
                     },
                     {
                         id: 3,
@@ -39,7 +37,6 @@
                         company: "example.com",
                         feedbackTitle: "Azienda con ottimo servizio!",
                         feedback: "Quest'azienda ha veramente colpito sulla gestione del mio ristorantichiamerei sicuramente in caso di problemi!",
-                        imgSrc: "https://picsum.photos/100/100"
                     }
         
                 ],
@@ -84,6 +81,7 @@
                     :testimonial="testimonial"
                     class="test"
                     />
+                    
                 </div>
 
                 <div class="flex mt-12 gap-5">
@@ -105,7 +103,7 @@
 
             margin: 0;
             
-            padding-bottom: 50px;
+            // padding-bottom: 50px;
             background-color: #003049;
 
             // CONTENITORE CONTAINER-CARD E TITOLO
@@ -114,14 +112,14 @@
                 flex-direction: column;
                 align-items: center;
 
-                width: 80%;
+                width: 85%;
 
                 h2{
                     font-family: 'League Spartan', sans-serif;
-                    font-size: 70px;
+                    font-size: 60px;
                     font-weight: 800;
-                    margin-bottom: 70px;
-                    padding-left: 60px;
+                    margin-bottom: 60px;
+                    // padding-left: 60px;
                     width: 100%;
                     
                 }
@@ -141,32 +139,36 @@
 
                 // CONTENITORE CARD
                 .testimonials{
-                    transition: transform 0.5s ease-in-out;
+                    // transition: transform 0.5s ease-in-out;
+                    gap: 20px;
                     // SELEZIONA SOLAMENTE LA PRIAM E TERZA CARD PER POTERLE RENDERE SOTTO LA 2
                     
-                    .test:nth-child(1){
-                        margin-right: -100px;
-                        margin-left: 60px;
-                    }
+                    .test:nth-child(2){
+                        z-index: 100;
+                        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+                    }   
 
-                    .test:nth-child(3){
-                        margin-left: -80px;
-                        margin-right: 60px;
-                    }
+                     // .test:nth-child(1){
+                    //     margin-right: -100px;
+                    //     margin-left: 60px;
+                    // }
+
 
                     .test:nth-child(1), 
                     .test:nth-child(3)
-                    {
+                    {   
                         
+                        margin-bottom: -20px;
                         margin-top: 50px;
+                        opacity: 0.7;
                     }
     
                     // SECONDA CARTA SOPRA LE ALTRE
-                    .test:nth-child(2) {
-                        z-index: 1;
-                        margin-bottom: 50px;
-                        filter: drop-shadow(0 0 0.75rem black);
-                    }
+                    // .test:nth-child(2) {
+                    //     z-index: 1;
+                    //     margin-bottom: 50px;
+                    //     filter: drop-shadow(0 0 0.75rem black);
+                    // }
                 }
             }
         }
@@ -192,7 +194,11 @@
                 padding-inline: 20px;
 
                 .title-containers{
-                    width: 100%;
+                    width: 90%;
+
+                    h2{
+                        font-size: 55px;
+                    }
 
                     .testimonials{
                         
@@ -210,6 +216,12 @@
                         //     margin-bottom: 50px;
                         // }
 
+                        .test:nth-child(3)
+                        {
+                            display: none;
+                            margin-top: 0;
+                        }
+
                     }
                 }
 
@@ -225,6 +237,8 @@
                 padding-inline: 20px;
                 .title-containers{
                     
+                    width: 100%;
+
                     h2{
                        padding-left: 0;
                     }
@@ -232,27 +246,13 @@
                     .testimonials{
                         width: 100%;
 
-                        .test:nth-child(1){
-                            margin-left: 0;
-                            margin-right: -100px;
-                        }
-
-                        .test:nth-child(3){
-                            margin-right: 0;
-                            margin-left: -100px;
-                        }
-
-                        .test:nth-child(1), 
+                        
                         .test:nth-child(3)
                         {
-                            margin-top: 40px;
+                            display: none;
+                            margin-top: 0;
                         }
-    
-                        // SECONDA CARTA SOPRA LE ALTRE
-                        .test:nth-child(2) {
-                            z-index: 1;
-                            margin-bottom: 40px;
-                        }
+
                     }
                 }
             }

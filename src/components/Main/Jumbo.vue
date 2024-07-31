@@ -4,36 +4,36 @@
         components:{
             
         },
-        data(){
-            return{
-                isTitleVisible: false,
-                isDescriptionVisible: false,
-                isButtonVisible: false
-            }
-        },
-        methods: {
+        // data(){
+        //     return{
+        //         isTitleVisible: false,
+        //         isDescriptionVisible: false,
+        //         isButtonVisible: false
+        //     }
+        // },
+        // methods: {
 
-        },
-        mounted(){
-            setTimeout(() => {
-                this.isTitleVisible = true;
-            }, 500); 
+        // },
+        // mounted(){
+        //     setTimeout(() => {
+        //         this.isTitleVisible = true;
+        //     }, 500); 
 
-            setTimeout(() => {
-                this.isDescriptionVisible = true;
-            }, 600);
+        //     setTimeout(() => {
+        //         this.isDescriptionVisible = true;
+        //     }, 600);
 
-            setTimeout(() => {
-                this.isButtonVisible = true;
-            }, 700);
+        //     setTimeout(() => {
+        //         this.isButtonVisible = true;
+        //     }, 700);
             
-            setTimeout(() => {
-                const photos = document.querySelectorAll('.photo');
-                photos.forEach(photo => {
-                    photo.classList.add('visible');
-                });
-            });
-        }
+        //     setTimeout(() => {
+        //         const photos = document.querySelectorAll('.photo');
+        //         photos.forEach(photo => {
+        //             photo.classList.add('visible');
+        //         });
+        //     });
+        // }
     };
 
 </script>
@@ -43,16 +43,16 @@
             <div class="hero-section w-full py-2 ">
                 <div class="hero-body">
                     <!-- <div class="animate-container"> -->
-                        <h1 class="animate-title" :class="{ visible: isTitleVisible }">AL SERVIZIO DELLA TUA IMPRESA</h1>
+                        <h1 :class="{ visible: isTitleVisible }">AL SERVIZIO DELLA TUA IMPRESA</h1>
                     <!-- </div> -->
                     
                     <!-- <div class="animate-container"> -->
-                        <p class="animate-description" :class="{ visible: isDescriptionVisible }">
+                        <p :class="{ visible: isDescriptionVisible }">
                             Servizi specializzati in <span>registratori di cassa</span>, <span>bilance</span> e <span>software gestionali</span>, con un focus particolare sull'assistenza. 
                         </p>
                     <!-- </div> -->
                     
-                    <div class="animate-button" :class="{visible: isButtonVisible}">
+                    <div :class="{visible: isButtonVisible}">
 
                         <router-link to="/prodotti" class="border py-2 px-3 rounded-full btn me-10 acquista">ACQUISTA</router-link>
 
@@ -62,18 +62,18 @@
                 <div class="hero-photos">
                     <div class="photo-container flex ps-12 ">
                         <img src="../../img/cash-register-3.webp" class="photo" alt="registratore-di-cassa" loading="lazy">
-                        <img src="../../img/cash-register-2.webp" class="photo big-photo" alt="registratore-di-cassa-touch" loading="lazy">
-                        <img src="../../img/software-gestionale-1.webp" class="photo " alt="cloud-e-reti" loading="lazy">
+                        <img src="../../img/cash-register-2(resized).webp" class="photo big-photo" alt="registratore-di-cassa-touch" loading="lazy">
+                        <img src="../../img/software-gestionale-1(resized).webp" class="photo " alt="cloud-e-reti" loading="lazy">
                     </div>
                     <div class="photo-container flex pe-12">
-                        <img src="../../img/RCH.jpg" class="photo" alt="prodotti-rch" loading="lazy">
+                        <img src="../../img/RCH(resized).jpg" class="photo" alt="prodotti-rch" loading="lazy">
                         <img src="../../img/cash-register-3.webp" class="photo" alt="registratore-di-cassa" loading="lazy">
-                        <img src="../../img/assistenza_1.jpg" class="photo" alt="assistenza-telefonica" loading="lazy">
+                        <img src="../../img/assistenza_1(resized).jpg" class="photo" alt="assistenza-telefonica" loading="lazy">
                     </div>
                     <div class="photo-container flex ps-8">
-                        <img src="../../img/helping-1.webp" class="photo" alt="assistenza-da-computer" loading="lazy">
+                        <img src="../../img/helping-1(resized).webp" class="photo" alt="assistenza-da-computer" loading="lazy">
                         <img src="../../img/assistenza2.webp" class="photo" alt="cassetti-automatici" loading="lazy">
-                        <img src="../../img/cash-register-1.jpg" class="photo" alt="sistema-di-pagamento" loading="lazy">
+                        <img src="../../img/cash-register-1(resized).jpg" class="photo" alt="sistema-di-pagamento" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -106,11 +106,12 @@
         min-width: 400px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-left: 20px;
+        width: 50%;
 
         h1{
-            font-size: 4vw;
+            font-size: 65px;
             font-weight: 900;
             line-height: 1.1;
             margin-top: 20px
@@ -157,54 +158,29 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        
-        width: 70vw;
+        width: 50%;
         max-width: 1200px;
 
         .photo-container{
             width: 100%;
-            flex: 1;
+            // flex: 1;
             gap: 30px;
             
             
             .photo{
-                flex: 1;
+                // flex: 1;
                 object-fit: cover;
                 background-color: lightgrey;
                 min-width: 200px;
                 height: 180px;
-                width: 100%;
+                width: 280px;
                 border-radius: 30px;
-                opacity: 0; 
-                animation: slideFromRight 1s ease forwards;
             }
 
-            @keyframes slideFromRight {
-                from {
-                    transform: translateX(100%);
-                }
-                to {
-                    transform: translateX(0);
-                }
-            }
 
-            .photo.visible {
-                 opacity: 1;
-            }   
         }
     }
 
-
-    // ANIMATIONS
-    .animate-title, .animate-description, .animate-button {
-        opacity: 0;
-        transform: translateY(10%);
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    }
-    .visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
 
     /*****  RESPONSIVE SCREEN  ******/
     @media screen and (max-width: 1300px) {
@@ -213,7 +189,16 @@
         }
 
         .hero-body h1 {
-            font-size: 65px;
+            font-size: 55px;
+        }
+
+        .hero-body p {
+            width: 90%;
+            font-size: 25px;
+
+            span{
+                font-size: 24px;
+            }
         }
 
         .photo{
@@ -224,10 +209,23 @@
     // 1000 PIXEL
     @media screen and (max-width: 1024px) {
         .hero-body h1 {
-            font-size: 60px;
+            font-size: 50px;
         }
         .hero-body p {
-            width: 100%;
+            width: 80%;
+            font-size: 25px;
+
+            span{
+                font-size: 24px;
+            }
+        }
+        
+        .hero-body{
+            width: 65%;
+        }
+
+        .hero-photos{
+            width: 35%;
         }
     }
 
@@ -244,7 +242,6 @@
                 flex-direction: column;
                 text-align: center;
                 padding-left: 0px;
-                // border: 1px solid red;
             }
         }
 
@@ -256,6 +253,7 @@
             padding-block: 10px;
             padding-left: 0;
             margin-bottom: 40px;
+            width: auto;
 
             h1{
                 font-size: 60px;

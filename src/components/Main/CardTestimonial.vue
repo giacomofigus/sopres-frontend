@@ -40,8 +40,8 @@ export default {
 
 .card {
     background-color: #F0F0F0;
-    border: 2px solid black;
-    border-radius: 50px;
+    // border: 2px solid black;
+    border-radius: 10px;
 
     gap: 30px;
 

@@ -25,7 +25,7 @@ export default {
         <nav>
             <div class="container-logo">
                 <router-link class="flex items-center" to="/">
-                    <img id="logo" src="../../img/logo.png" alt="logo-sopres">
+                    <img id="logo" src="../../img/logo(resized).png" alt="logo-sopres">
                     <!-- <span class="">Sopres</span> -->
                 </router-link>
             </div>
@@ -67,8 +67,8 @@ export default {
         
     }
 
-    #logo{
-        width: 150px;
+    img{
+        width: 130px;
     }
 
     li{
@@ -121,7 +121,7 @@ export default {
         }
 
         #logo{
-            width: 130px;
+            width: 120px;
             position: fixed;
             z-index: 100;
         }
