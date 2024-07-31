@@ -48,6 +48,7 @@ export default {
     padding-inline: 40px;
     padding-block: 60px;
 
+    // height: 500px;
     width: 100%;
     
     #top-card {
